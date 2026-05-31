@@ -12,6 +12,12 @@ outreach/
 # Local staging area before content is moved into docs/
 site/
 
+# Operational source-of-truth — privacy-sensitive (bank statements, PII emails,
+# tax docs, workbooks). MUST NEVER be committed to this PUBLIC repo (Hard Rule #1).
+# The real admin/ lives at the workspace level (../admin); this guard also catches
+# any stray copy accidentally created inside the repo.
+admin/
+
 # OS / editor
 .DS_Store
 Thumbs.db
