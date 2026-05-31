@@ -1,0 +1,27 @@
+# Internal marketing workspace — NOT committed to the public repo.
+# Lives locally as Cowork's working area only.
+BRAND.md
+MESSAGING.md
+PRICING.md
+CAST.md
+CLAUDE.md
+COPY/
+posts/
+outreach/
+
+# Local staging area before content is moved into docs/
+site/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Future build artefacts (if Astro/Next ever lives here)
+node_modules/
+.next/
+.astro/
+dist/
+build/
