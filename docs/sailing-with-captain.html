@@ -1,0 +1,216 @@
+<!doctype html>
+<!--
+   ┌───────────────────────────────────────────────────────────────────────┐
+   │ DANSK VERSION                                                          │
+   │ Du redigerer den danske side. Engelsk udgave findes i en/sailing-with-captain.html. │
+   │ Hold sproget rent — undgå at blande engelsk og dansk i samme fil.     │
+   └───────────────────────────────────────────────────────────────────────┘
+-->
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sejl med kaptajn — WeSail</title>
+  <meta name="description" content="En skipperet uge på Xanemo med Nasos eller en af de andre kaptajner jeg sejler med selv. Priser, drikkepenge, forplejning.">
+  <meta property="og:title" content="Sejl med kaptajn — WeSail">
+  <meta property="og:description" content="En skipperet uge på Xanemo med Nasos eller en af de andre kaptajner jeg sejler med selv. Priser, drikkepenge, forplejning.">
+  <meta property="og:image" content="https://www.wesailxp.com/public/pics/xanemo-hero.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="da_DK">
+  <link rel="canonical" href="https://www.wesailxp.com/sailing-with-captain.html">
+  <link rel="alternate" hreflang="da" href="https://www.wesailxp.com/sailing-with-captain.html">
+  <link rel="alternate" hreflang="en" href="https://www.wesailxp.com/en/sailing-with-captain.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+:root { --navy:#102a3a; --linen:#f4efe6; --sand:#c9a77a; --ink:#1a1a1a; --muted:#6b6b6b; --rule:#e3ddd0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: var(--linen); line-height: 1.55; font-size: 17px; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; color: var(--navy); line-height: 1.15; letter-spacing: -0.01em; }
+a { color: var(--navy); }
+.container { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+
+/* nav */
+.main-nav { background: var(--navy); padding: 14px 28px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; font-size: 0.92rem; }
+.main-nav .brand { font-family: 'Cormorant Garamond', serif; color: white; font-size: 1.25rem; text-decoration: none; font-weight: 500; }
+.main-nav .links { display: flex; gap: 22px; flex: 1; flex-wrap: wrap; }
+.main-nav .links a { color: rgba(255,255,255,0.82); text-decoration: none; }
+.main-nav .links a:hover, .main-nav .links a.active { color: var(--sand); }
+.main-nav .lang-mini { display: flex; gap: 2px; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.main-nav .lang-mini a { color: rgba(255,255,255,0.6); text-decoration: none; padding: 0 6px; }
+.main-nav .lang-mini a.active { color: white; font-weight: 600; }
+.main-nav .lang-mini .sep { color: rgba(255,255,255,0.3); }
+@media (max-width: 720px) { .main-nav { padding: 10px 16px; gap: 10px; font-size: 0.85rem; } .main-nav .links { gap: 14px; order: 3; flex-basis: 100%; } }
+
+/* page header (small banner on content pages) */
+.page-header { background: var(--navy); color: white; padding: 60px 0 70px; border-bottom: 4px solid var(--sand); }
+.page-header h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 12px; }
+.page-header p.lead { color: rgba(244,239,230,0.88); font-size: 1.1rem; margin: 0; max-width: 64ch; }
+
+section { padding: 60px 0; border-bottom: 1px solid var(--rule); }
+section h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin: 0 0 24px; }
+section h3 { font-size: 1.3rem; margin: 28px 0 12px; }
+section p { margin: 0 0 16px; max-width: 64ch; }
+section ul, section ol { max-width: 64ch; padding-left: 22px; }
+section li { margin: 0 0 10px; }
+
+/* callout box */
+.callout { background: white; border-left: 3px solid var(--sand); padding: 20px 24px; margin: 24px 0; max-width: 64ch; }
+.callout strong { color: var(--navy); }
+
+/* placeholder block (for things user fills in later) */
+.placeholder-block { background: rgba(201,167,122,0.08); border: 1px dashed var(--sand); padding: 28px 24px; margin: 24px 0; max-width: 64ch; color: var(--muted); font-style: italic; }
+.placeholder-block::before { content: "Placeholder — "; color: var(--sand); font-weight: 600; font-style: normal; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.12em; display: block; margin-bottom: 8px; }
+
+/* map placeholder */
+.map-placeholder { background: linear-gradient(135deg, var(--rule) 0%, #d4cdb8 100%); aspect-ratio: 16/9; max-width: 64ch; display: flex; align-items: center; justify-content: center; color: var(--muted); font-style: italic; margin: 20px 0; border-radius: 2px; }
+
+/* cards */
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 64ch; margin-top: 24px; }
+@media (max-width: 720px) { .cards { grid-template-columns: 1fr; } }
+.card { background: white; border: 1px solid var(--rule); padding: 24px; }
+.card h3 { margin: 0 0 10px; font-size: 1.2rem; }
+.card p { font-size: 0.95rem; margin: 0; }
+
+/* rate / spec table */
+table.kv { border-collapse: collapse; max-width: 64ch; margin: 16px 0; }
+table.kv td { padding: 10px 16px 10px 0; border-bottom: 1px solid var(--rule); font-size: 0.95rem; vertical-align: top; }
+table.kv td:first-child { color: var(--navy); font-weight: 500; min-width: 180px; }
+
+/* testimonials + photos placeholders (reuse home page styles) */
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; max-width: 64ch; }
+@media (max-width: 540px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
+.gallery-grid .photo-stub { aspect-ratio: 4/3; background: linear-gradient(135deg, var(--rule) 0%, #d4cdb8 100%); }
+
+/* CTA */
+.btn { display: inline-block; padding: 13px 26px; background: var(--sand); color: var(--navy); text-decoration: none; font-weight: 500; letter-spacing: 0.02em; border-radius: 2px; }
+
+footer { background: var(--navy); color: rgba(244,239,230,0.7); font-size: 0.85rem; padding: 36px 0 44px; line-height: 1.7; }
+footer a { color: rgba(244,239,230,0.9); }
+</style>
+</head>
+<body>
+  <nav class="main-nav" aria-label="Hovedmenu">
+    <a class="brand" href="/">WeSail</a>
+    <div class="links">
+        <a href="/">Forside</a>
+        <a href="/sailing-with-captain.html" class="active">Sejl med kaptajn</a>
+        <a href="/be-a-captain.html">Vær kaptajn</a>
+        <a href="/getting-there.html">Sådan kommer du derhen</a>
+    </div>
+    <div class="lang-mini">
+      <a href="/" class="active" lang="da" hreflang="da">DA</a><span class="sep">|</span><a href="/en/" lang="en" hreflang="en">EN</a>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Sejl med en kaptajn.</h1>
+      <p class="lead">En uge på Xanemo med en græsk kaptajn jeg selv sejler med. Hvordan dagen ser ud, hvad det koster, hvad I tager med.</p>
+    </div>
+  </header>
+
+  
+  <section>
+    <div class="container">
+      <h2>En uge med en kaptajn jeg sejler med selv.</h2>
+      <p>En skipperet uge på Xanemo betyder at I tager familien eller venner med, og en græsk kaptajn (Nasos eller en af de andre jeg sejler med selv) tager roret. I sejler ikke selv — I lærer ved at se på, hvis I vil, eller I lægger jer på fordækket og lader nogen anden tænke. Begge dele er fint.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Hvem er kaptajnerne.</h2>
+      <p>Hovedkaptajnen er <strong>Nasos</strong>. Han kender disse farvande, han passer Xanemo gennem vinteren, og han er afslappet med blandede grupper hvor sejlere og ikke-sejlere er ombord samtidig. Hvis Nasos ikke er ledig den uge I vil, er det en af de andre græske skippere jeg sejler med selv.</p>
+      <div class="placeholder-block">Nikolaj fylder ud med 2–3 sætninger om hver kaptajn — hvad de er gode til, hvad de viser gæsterne, sprog de taler.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>En typisk dag.</h2>
+      <ul>
+        <li><strong>Morgen:</strong> kaffe i cockpittet, en kort snak om dagens rute og vejret. Sejl op senest 10–11.</li>
+        <li><strong>Formiddag:</strong> 3–4 timers sejlads. Pause til frokost et stille sted — ankret op, lille bugt, måske svømme.</li>
+        <li><strong>Eftermiddag:</strong> en kort hop til næste destination eller bare blive hvor I er.</li>
+        <li><strong>Aften:</strong> ind i havnen eller på anker. Middag i en taverna ashore eller ombord. Tsipouro hvis I er heldige.</li>
+      </ul>
+      <p>Kaptajnen tilpasser efter jer. Vil I sove længe, sove længe. Vil I på en lang etape, en lang etape. Vil I prøve at tage roret, så tager I roret.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Priser og det praktiske.</h2>
+      <h3>Charterprisen for båden</h3>
+      <p>Se <a href="/#pricing">prissektionen på forsiden</a>. 10% under listepris ved direkte booking.</p>
+
+      <h3>Kaptajnens dagpenge</h3>
+      <table class="kv">
+        <tr><td>Dagrate (typisk)</td><td>~€150/dag</td></tr>
+        <tr><td>For en uge</td><td>~€1.050</td></tr>
+        <tr><td>Inkluderet</td><td>Kaptajn ombord, hans logi (en kabine eller en sofa i salonen ved tætpakkede grupper)</td></tr>
+        <tr><td>Betales</td><td>Kontant ved chartrets start eller direkte til kaptajnen ved afslutning</td></tr>
+      </table>
+      <div class="callout"><strong>Bekræft prisen ved booking:</strong> raterne kan variere lidt mellem kaptajnerne. Det endelige tal er det jeg sender jer i kontrakten.</div>
+
+      <h3>Drikkepenge</h3>
+      <p>Ingen formel forventning, men det er sædvane at give kaptajnen <strong>10–15% af hans dagpenge i drikkepenge ved tilfredshed</strong>. Ved en uges charter betyder det €100–150. Gives kontant ved afslutning.</p>
+
+      <h3>Forplejning</h3>
+      <p>Kaptajnens mad er inkluderet — han spiser ombord af det I spiser. Hvis I går i restaurant ashore, er det <strong>skik at invitere kaptajnen med</strong>. Han er ikke ansat til at sidde alene på båden mens I spiser pænt — han er en del af gruppen i den forstand.</p>
+      <p>Hvis I foretrækker af forskellige grunde at have kaptajnen for jer selv ombord, så er det også fint — gennemgår vi i forvejen.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Hvad I tager med.</h2>
+      <ul>
+        <li>Jer selv.</li>
+        <li>Bløde tasker (se "<a href="/getting-there.html">Sådan kommer du derhen</a>" for bagagetips).</li>
+        <li>Solcreme, sololie, hat, solbriller. Det er Grækenland.</li>
+        <li>Bløde sko eller barfod ombord.</li>
+        <li>Lidt kontant til drikkepenge og lokale shops.</li>
+      </ul>
+      <p>Provisioner kan I bestille gennem Odyssey inden afrejse, eller I køber selv i Volos den første morgen.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Hvad gæster siger.</h2>
+      <p>To nye anbefalinger er på vej. Imens — placeholder-eksempler:</p>
+      <div class="placeholder-block">2–3 testimonials kommer her, med navn + uge + 3–4 sætninger. Reelle citater fra bekræftede gæster erstatter disse før lancering.</div>
+
+      <h3>Fotos fra tidligere chartere</h3>
+      <div class="gallery-grid">
+        <div class="photo-stub"></div>
+        <div class="photo-stub"></div>
+        <div class="photo-stub"></div>
+        <div class="photo-stub"></div>
+        <div class="photo-stub"></div>
+        <div class="photo-stub"></div>
+      </div>
+      <div class="placeholder-block">6 fotos fra tidligere skipperede chartere — Nikolaj fylder ud.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Klar til at booke?</h2>
+      <p>Send mig datoer, antal gæster, og om I vil have en bestemt kaptajn — så vender jeg tilbage samme dag.</p>
+      <p><a class="btn" href="mailto:nikolaj@sitehub.dk?subject=Skipperet%20uge%20Xanemo">Send dine datoer →</a></p>
+    </div>
+  </section>
+
+  
+  <footer>
+    <div class="container">
+      WeSail Greece Single-Member P.C. · Græsk CVR 801692534 · Basehavn: Volos, Grækenland<br>Drift og forsikring i Grækenland står <a href="https://odysseysailing.gr/charter/oceanis-440-volos/" target="_blank" rel="noopener">Odyssey Sailing</a> for (registreret hos GNTO–EOT).<br>© 2026 WeSail Greece. Alle rettigheder forbeholdes.
+    </div>
+  </footer>
+</body>
+</html>

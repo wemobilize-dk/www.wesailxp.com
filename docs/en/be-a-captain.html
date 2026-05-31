@@ -1,0 +1,239 @@
+<!doctype html>
+<!--
+   ┌───────────────────────────────────────────────────────────────────────┐
+   │ ENGLISH VERSION                                                        │
+   │ You are editing the English page. Danish lives in ../be-a-captain.html.     │
+   │ Keep languages clean — don't mix English and Danish in the same file. │
+   └───────────────────────────────────────────────────────────────────────┘
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Be a captain — Bareboat Xanemo — WeSail</title>
+  <meta name="description" content="Two weeks bareboat on Xanemo in the Sporades. Apps, certificates, handover, a route sketch, and who to call if something breaks.">
+  <meta property="og:title" content="Be a captain — Bareboat Xanemo — WeSail">
+  <meta property="og:description" content="Two weeks bareboat on Xanemo in the Sporades. Apps, certificates, handover, a route sketch, and who to call if something breaks.">
+  <meta property="og:image" content="https://www.wesailxp.com/public/pics/xanemo-hero.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <link rel="canonical" href="https://www.wesailxp.com/en/be-a-captain.html">
+  <link rel="alternate" hreflang="da" href="https://www.wesailxp.com/be-a-captain.html">
+  <link rel="alternate" hreflang="en" href="https://www.wesailxp.com/en/be-a-captain.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+:root { --navy:#102a3a; --linen:#f4efe6; --sand:#c9a77a; --ink:#1a1a1a; --muted:#6b6b6b; --rule:#e3ddd0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: var(--linen); line-height: 1.55; font-size: 17px; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; color: var(--navy); line-height: 1.15; letter-spacing: -0.01em; }
+a { color: var(--navy); }
+.container { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+
+/* nav */
+.main-nav { background: var(--navy); padding: 14px 28px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; font-size: 0.92rem; }
+.main-nav .brand { font-family: 'Cormorant Garamond', serif; color: white; font-size: 1.25rem; text-decoration: none; font-weight: 500; }
+.main-nav .links { display: flex; gap: 22px; flex: 1; flex-wrap: wrap; }
+.main-nav .links a { color: rgba(255,255,255,0.82); text-decoration: none; }
+.main-nav .links a:hover, .main-nav .links a.active { color: var(--sand); }
+.main-nav .lang-mini { display: flex; gap: 2px; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.main-nav .lang-mini a { color: rgba(255,255,255,0.6); text-decoration: none; padding: 0 6px; }
+.main-nav .lang-mini a.active { color: white; font-weight: 600; }
+.main-nav .lang-mini .sep { color: rgba(255,255,255,0.3); }
+@media (max-width: 720px) { .main-nav { padding: 10px 16px; gap: 10px; font-size: 0.85rem; } .main-nav .links { gap: 14px; order: 3; flex-basis: 100%; } }
+
+/* page header (small banner on content pages) */
+.page-header { background: var(--navy); color: white; padding: 60px 0 70px; border-bottom: 4px solid var(--sand); }
+.page-header h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 12px; }
+.page-header p.lead { color: rgba(244,239,230,0.88); font-size: 1.1rem; margin: 0; max-width: 64ch; }
+
+section { padding: 60px 0; border-bottom: 1px solid var(--rule); }
+section h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin: 0 0 24px; }
+section h3 { font-size: 1.3rem; margin: 28px 0 12px; }
+section p { margin: 0 0 16px; max-width: 64ch; }
+section ul, section ol { max-width: 64ch; padding-left: 22px; }
+section li { margin: 0 0 10px; }
+
+/* callout box */
+.callout { background: white; border-left: 3px solid var(--sand); padding: 20px 24px; margin: 24px 0; max-width: 64ch; }
+.callout strong { color: var(--navy); }
+
+/* placeholder block (for things user fills in later) */
+.placeholder-block { background: rgba(201,167,122,0.08); border: 1px dashed var(--sand); padding: 28px 24px; margin: 24px 0; max-width: 64ch; color: var(--muted); font-style: italic; }
+.placeholder-block::before { content: "Placeholder — "; color: var(--sand); font-weight: 600; font-style: normal; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.12em; display: block; margin-bottom: 8px; }
+
+/* map placeholder */
+.map-placeholder { background: linear-gradient(135deg, var(--rule) 0%, #d4cdb8 100%); aspect-ratio: 16/9; max-width: 64ch; display: flex; align-items: center; justify-content: center; color: var(--muted); font-style: italic; margin: 20px 0; border-radius: 2px; }
+
+/* cards */
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 64ch; margin-top: 24px; }
+@media (max-width: 720px) { .cards { grid-template-columns: 1fr; } }
+.card { background: white; border: 1px solid var(--rule); padding: 24px; }
+.card h3 { margin: 0 0 10px; font-size: 1.2rem; }
+.card p { font-size: 0.95rem; margin: 0; }
+
+/* rate / spec table */
+table.kv { border-collapse: collapse; max-width: 64ch; margin: 16px 0; }
+table.kv td { padding: 10px 16px 10px 0; border-bottom: 1px solid var(--rule); font-size: 0.95rem; vertical-align: top; }
+table.kv td:first-child { color: var(--navy); font-weight: 500; min-width: 180px; }
+
+/* testimonials + photos placeholders (reuse home page styles) */
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; max-width: 64ch; }
+@media (max-width: 540px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
+.gallery-grid .photo-stub { aspect-ratio: 4/3; background: linear-gradient(135deg, var(--rule) 0%, #d4cdb8 100%); }
+
+/* CTA */
+.btn { display: inline-block; padding: 13px 26px; background: var(--sand); color: var(--navy); text-decoration: none; font-weight: 500; letter-spacing: 0.02em; border-radius: 2px; }
+
+footer { background: var(--navy); color: rgba(244,239,230,0.7); font-size: 0.85rem; padding: 36px 0 44px; line-height: 1.7; }
+footer a { color: rgba(244,239,230,0.9); }
+</style>
+</head>
+<body>
+  <nav class="main-nav" aria-label="Main menu">
+    <a class="brand" href="/en/">WeSail</a>
+    <div class="links">
+        <a href="/en/">Home</a>
+        <a href="/en/sailing-with-captain.html">Sail with a captain</a>
+        <a href="/en/be-a-captain.html" class="active">Be a captain</a>
+        <a href="/en/getting-there.html">Getting there</a>
+    </div>
+    <div class="lang-mini">
+      <a href="/" lang="da" hreflang="da">DA</a><span class="sep">|</span><a href="/en/" class="active" lang="en" hreflang="en">EN</a>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Be a captain on Xanemo.</h1>
+      <p class="lead">Two weeks bareboat in the Sporades for sailors with the papers. Apps, prep, handover, and who you call if something breaks.</p>
+    </div>
+  </header>
+
+  
+  <section>
+    <div class="container">
+      <h2>You're the skipper. We've got the paperwork, you've got the boat.</h2>
+      <p>Two weeks bareboat on Xanemo in the Sporades. You sail her. I + Odyssey make sure the boat is ready, the papers are right, and you have a number to call if something breaks. The rest is yours.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Before you go — tools that make it easier.</h2>
+
+      <h3>VesselFinder</h3>
+      <p>Free app + website. Look up <strong>"Xanemo"</strong> to see where she is right now, where she's sailed the last few weeks, speed, heading. Good for getting a feel for how prior charterers laid their routes.</p>
+
+      <h3>Navily</h3>
+      <p>Anchorage database with reviews, depths, holding, shelter. Covers the Sporades well. Chat function lets you ping other sailors currently in the area — "what's it like in Steni Vala tonight?" App + web.</p>
+
+      <h3>Greek Waters Pilot</h3>
+      <p>The classic Rod Heikell pilot. Two options:</p>
+      <ul>
+        <li><strong>Digital:</strong> buy online before you leave, run it on iPad or phone. Searchable, easy to carry.</li>
+        <li><strong>Physical:</strong> there's a copy onboard. Worn pages earn their keep.</li>
+      </ul>
+
+      <h3>Weather</h3>
+      <p>Windy (windy.com) and Windguru (windguru.cz/49) are standard. In the Sporades the <strong>meltemi</strong> can be strong in July–August — a north-westerly that runs 25–35 knots. Check the forecast every morning before you leave the anchorage.</p>
+
+      <h3>Marine VHF + AIS</h3>
+      <p>Boat has VHF and AIS. Channel 16 for calls, channel 12 for Volos port authority. Run a VHF check on day 1.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Certificates and crew.</h2>
+      <p>Greek law for bareboat charter requires:</p>
+      <ul>
+        <li>Skipper with <strong>ICC</strong>, <strong>RYA Day Skipper</strong>, <strong>Danish Yachtskipper 3 / Duelighedsbevis</strong> or equivalent recognised licence.</li>
+        <li>One crew member with declared sailing experience.</li>
+        <li>VHF radio certificate requirement varies in enforcement — Odyssey confirms what your specific licence covers when we book.</li>
+      </ul>
+      <p>Send certificates + passport photos to Odyssey 1–2 weeks before departure. They prepare the papers.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>The handover.</h2>
+      <p>When you arrive in Volos, Alex (or one of the captains, e.g. Nasos) walks you through the boat. Allow about an hour:</p>
+      <ul>
+        <li>Sails, halyards, reefing — what's what, what's where</li>
+        <li>Engine, generator, water tanks, controls</li>
+        <li>VHF, chartplotter, autopilot, AIS</li>
+        <li>Anchor, bow thruster, dinghy with outboard</li>
+        <li>Heads (Xanemo has pump heads, not vacuum) and the fresh water system</li>
+        <li>Where the breakers, fire extinguisher, liferaft, EPIRB live</li>
+        <li>Local gotchas: cross-currents in/out of Skopelos, Trikeri tides</li>
+      </ul>
+      <p>Ask everything — that's the point. Better to wonder now than mid-anchor-drag later.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Two weeks in the Sporades — a sketch.</h2>
+      <p>A suggestion, not a plan. You choose:</p>
+      <table class="kv">
+        <tr><td>Day 1</td><td>Volos → Trikeri (Pelion peninsula). Quiet bay, taverna.</td></tr>
+        <tr><td>Day 2</td><td>Trikeri → Skiathos. Long morning on the water, brief stop in town.</td></tr>
+        <tr><td>Day 3–4</td><td>Skopelos: town, the monastery, a leg down the south side.</td></tr>
+        <tr><td>Day 5–6</td><td>Alonissos: Steni Vala, fisherman's taverna.</td></tr>
+        <tr><td>Day 7–8</td><td>Marine park: Kyra Panagia, Yioura, deep into the chain. Quietest of all.</td></tr>
+        <tr><td>Day 9–10</td><td>Back via the north side of Alonissos, a night in Patitiri.</td></tr>
+        <tr><td>Day 11–12</td><td>Middle Sporades (Peristera) or back to Skopelos.</td></tr>
+        <tr><td>Day 13</td><td>Pelion coast on the way back — Damouchari, Khorefto.</td></tr>
+        <tr><td>Day 14</td><td>Return Volos, fuel, ready for handover.</td></tr>
+      </table>
+      <div class="callout"><strong>Weather decides:</strong> if the meltemi is blowing NW 30+, you go south (more shelter behind the islands) or stay another day in one bay. That's the game.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Return routine.</h2>
+      <ul>
+        <li>Back to Volos by <strong>5:00 PM Friday</strong> (or as agreed).</li>
+        <li>Fuel up on the way back — Skiathos or Volos.</li>
+        <li>Pack and tidy the day before return.</li>
+        <li>End-of-charter cleaning is included (Mr Jeff). You don't scrub.</li>
+        <li>Linen also goes to Mr Jeff via Odyssey.</li>
+        <li>Empty the holding tank on return if you've used the heads heavily.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>If something goes wrong.</h2>
+      <p>Hull insurance (Pantaenius) covers the boat. Deposit covers minor damage (up to €X — confirmed in contract). Bigger stuff → call Odyssey or me.</p>
+      <ul>
+        <li><strong>Odyssey 24/7:</strong> +30 6974 659 156 (WhatsApp / Viber / SMS)</li>
+        <li><strong>Nikolaj (owner):</strong> +45 30 20 80 38</li>
+        <li><strong>Greek Coast Guard:</strong> 108</li>
+        <li><strong>Maritime distress:</strong> VHF Channel 16, "Mayday Mayday Mayday" + position</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Want to talk?</h2>
+      <p>If you're considering two weeks bareboat, send dates + your licences. I'll come back same day with a price.</p>
+      <p><a class="btn" href="mailto:nikolaj@sitehub.dk?subject=Bareboat%20fortnight%20Xanemo">Send your dates →</a></p>
+    </div>
+  </section>
+
+  
+  <footer>
+    <div class="container">
+      WeSail Greece Single-Member P.C. · Greek Tax ID 801692534 · Base: Volos, Greece<br>Greek-side operations and bonding by <a href="https://odysseysailing.gr/charter/oceanis-440-volos/" target="_blank" rel="noopener">Odyssey Sailing</a> (GNTO–EOT registered).<br>© 2026 WeSail Greece. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
