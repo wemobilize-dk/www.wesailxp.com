@@ -1,0 +1,286 @@
+<!doctype html>
+<!--
+   ┌───────────────────────────────────────────────────────────────────────┐
+   │ ENGLISH VERSION — wesailxp.com/en/                                     │
+   │ You are editing the English page. Danish lives in ../index.html.       │
+   │ Keep languages clean — don't mix English and Danish in the same file. │
+   └───────────────────────────────────────────────────────────────────────┘
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WeSail — Xanemo, the Sporades, direct from the owner</title>
+  <meta name="description" content="Xanemo — a 1995 Beneteau Oceanis 440, owner's version, refit 2023. Sailed from Volos in the Sporades. Booked direct from the owner; 10% off the published 2026 rate.">
+  <meta property="og:title" content="WeSail — Xanemo, the Sporades, direct from the owner">
+  <meta property="og:description" content="A classic Beneteau Oceanis 440, owner's version. Sailed from Volos through the Sporades by Greek captains the owner sails with himself.">
+  <meta property="og:image" content="https://www.wesailxp.com/public/pics/xanemo-hero.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="da_DK">
+  <link rel="alternate" hreflang="da" href="https://www.wesailxp.com/">
+  <link rel="alternate" hreflang="en" href="https://www.wesailxp.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://www.wesailxp.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #102a3a;
+      --linen: #f4efe6;
+      --sand: #c9a77a;
+      --ink: #1a1a1a;
+      --muted: #6b6b6b;
+      --rule: #e3ddd0;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; font-weight: 400; color: var(--ink); background: var(--linen); line-height: 1.55; font-size: 17px; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; color: var(--navy); line-height: 1.15; letter-spacing: -0.01em; }
+    a { color: var(--navy); }
+    .container { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+
+    /* language switcher */
+    .lang-switcher {
+      position: fixed; top: 18px; right: 24px; z-index: 100;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(6px);
+      padding: 6px 12px; border-radius: 4px;
+      font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
+      box-shadow: 0 2px 8px rgba(16,42,58,0.12);
+    }
+    .lang-switcher a { color: var(--muted); text-decoration: none; padding: 0 6px; }
+    .lang-switcher a.active { color: var(--navy); font-weight: 600; }
+    .lang-switcher a:hover { color: var(--navy); }
+    .lang-switcher .sep { color: var(--rule); padding: 0 2px; }
+
+    /* hero */
+    /* HERO PHOTO FRAMING — see comment in /index.html. background-position controls focal point. */
+    .hero { min-height: 88vh; display: flex; align-items: flex-end; background: linear-gradient(180deg, rgba(16,42,58,0.15) 0%, rgba(16,42,58,0.55) 100%), url('../public/pics/xanemo-hero.jpg'); background-size: cover; background-position: center 40%; background-repeat: no-repeat; color: white; padding: 0 0 70px; }
+    .hero h1 { color: white; font-size: clamp(2.4rem, 5vw, 4rem); max-width: 720px; margin: 0 0 16px; }
+    .hero p.sub { color: rgba(255,255,255,0.92); max-width: 620px; font-size: 1.15rem; margin: 0 0 28px; }
+    .btn { display: inline-block; padding: 13px 26px; background: var(--sand); color: var(--navy); text-decoration: none; font-weight: 500; letter-spacing: 0.02em; border-radius: 2px; transition: opacity .15s; }
+    .btn:hover { opacity: 0.88; }
+
+    section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
+    section h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); margin: 0 0 32px; }
+    section p { margin: 0 0 18px; max-width: 64ch; }
+
+    .story p:first-of-type::first-letter { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 3.4rem; float: left; line-height: 0.9; padding: 8px 12px 0 0; color: var(--navy); }
+    .pullquote { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.5rem; font-style: italic; color: var(--navy); border-left: 3px solid var(--sand); padding: 6px 0 6px 24px; margin: 30px 0; max-width: 60ch; }
+
+    .offers { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    @media (max-width: 720px) { .offers { grid-template-columns: 1fr; } }
+    .card { background: white; border: 1px solid var(--rule); padding: 32px 28px; }
+    .card .eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; color: var(--muted); margin: 0 0 10px; }
+    .card h3 { margin: 0 0 14px; font-size: 1.5rem; }
+    .card a { display: inline-block; margin-top: 10px; font-weight: 500; }
+
+    .specs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; max-width: 640px; }
+    .specs div { padding: 8px 0; border-bottom: 1px solid var(--rule); font-size: 0.95rem; }
+    .specs div strong { color: var(--navy); font-weight: 600; }
+    @media (max-width: 540px) { .specs { grid-template-columns: 1fr; } }
+
+    .crew { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 720px) { .crew { grid-template-columns: 1fr; } }
+    .crew .person { background: white; border: 1px solid var(--rule); padding: 28px 24px; }
+    .crew .person .placeholder-photo { width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, var(--rule) 0%, #d4cdb8 100%); margin: 0 0 18px; }
+    .crew .person h3 { margin: 0 0 4px; font-size: 1.3rem; }
+    .crew .person .role { color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 12px; }
+    .crew .person p { margin: 0; font-size: 0.96rem; }
+
+    table.rates { border-collapse: collapse; max-width: 560px; margin-top: 8px; }
+    table.rates td { padding: 8px 16px 8px 0; border-bottom: 1px solid var(--rule); font-size: 0.95rem; }
+    table.rates td:last-child { text-align: right; }
+    table.rates tr.highlight td { background: rgba(201,167,122,0.12); font-weight: 500; }
+
+    .pricing { background: var(--navy); color: var(--linen); border: 0; }
+    .pricing h2 { color: white; }
+    .pricing p { color: rgba(244,239,230,0.88); }
+    .pricing table.rates td { color: rgba(244,239,230,0.88); border-color: rgba(244,239,230,0.18); }
+    .pricing table.rates tr.highlight td { background: rgba(201,167,122,0.2); color: white; }
+
+    .testimonials .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    @media (max-width: 720px) { .testimonials .grid { grid-template-columns: 1fr; } }
+    .testimonial { background: white; border: 1px solid var(--rule); padding: 32px 28px; position: relative; }
+    .testimonial .quote { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; color: var(--ink); font-style: italic; line-height: 1.5; margin: 0 0 22px; }
+    .testimonial .quote::before { content: '"'; font-size: 3.2rem; color: var(--sand); line-height: 0; vertical-align: -0.4em; margin-right: 6px; }
+    .testimonial .meta { display: flex; align-items: center; gap: 14px; }
+    .testimonial .avatar { width: 48px; height: 48px; background: linear-gradient(135deg, var(--rule) 0%, #d4cdb8 100%); border-radius: 50%; flex-shrink: 0; }
+    .testimonial .name { font-weight: 500; color: var(--navy); font-size: 0.96rem; }
+    .testimonial .role { color: var(--muted); font-size: 0.85rem; }
+    .testimonial .placeholder-tag { position: absolute; top: 12px; right: 14px; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sand); font-weight: 600; }
+
+    .contact { text-align: center; padding: 100px 0 110px; }
+    .contact h2 { margin-bottom: 12px; }
+    .contact p { margin: 0 auto 24px; }
+    .contact a.email { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.6rem; color: var(--navy); text-decoration: underline; text-decoration-color: var(--sand); text-underline-offset: 6px; }
+
+    footer { background: var(--navy); color: rgba(244,239,230,0.7); font-size: 0.85rem; padding: 36px 0 44px; line-height: 1.7; }
+    footer a { color: rgba(244,239,230,0.9); }
+  </style>
+</head>
+<body>
+
+  <nav class="lang-switcher" aria-label="Language">
+    <a href="/" lang="da" hreflang="da">DA</a><span class="sep">|</span><a href="/en/" class="active" lang="en" hreflang="en">EN</a>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>The Sporades, on <em>Xanemo</em>.<br>Booked direct.</h1>
+      <p class="sub">A 1995 Beneteau Oceanis 440 — owner's version. Sailed from Volos by Greek captains the owner sails with himself.</p>
+      <a class="btn" href="mailto:nikolaj@sitehub.dk?subject=A%20week%20on%20Xanemo">Write to me about a week →</a>
+    </div>
+  </header>
+
+  <section class="story">
+    <div class="container">
+      <h2>How this is different.</h2>
+      <p>The first time I sailed in Greece I was fourteen and had just learned enough English to make a friend on a beach in the Peloponnese. He sailed. I sailed. We wrote letters to each other for years afterwards. I kept coming back to Greece — first with friends, then with my own family, on chartered boats out of Croatia, Denmark, the Caribbean, and always, eventually, Greece. The places I came back to were the quiet ones. The bays without the fleet.</p>
+      <p><em>Xanemo</em> is a 1995 Beneteau Oceanis 440, Jubilee edition — an <strong>owner's version</strong>, one wheel rather than the two you see on the modern charter boats. I bought her, refit her in 2023, fitted new Quantum sails, a bow thruster, solar and a wind generator, and put her in Volos. She is not new. She has a teak cockpit laid last year and 30 years of someone-having-loved-her. She is one of the faster boats in the area — which means good sailing on the days there's wind, and good anchorages on the days there isn't.</p>
+      <p>I share her with people I know, and people they know. Bookings come direct: Odyssey Sailing in Volos handles the paperwork and the captains; I handle the conversations. Direct-booked guests pay 10% under the published rate as standard, deeper for last-minute. The captains are Greek skippers I sail with myself — Nasos, for one, who also keeps the boat through the winter.</p>
+      <div class="pullquote">If the closest thing you've heard to this is FTLF's gastebørs, but without the requirement to already be in the subculture — yes, this is that.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Two ways aboard.</h2>
+      <div class="offers">
+        <div class="card">
+          <p class="eyebrow">Offer A — Captained</p>
+          <h3>One week. A captain I know. Up to eight guests.</h3>
+          <p>A Greek captain I sail with myself takes the helm. You bring family or friends. No licence needed. The route is yours, within reason: Volos to the Pelion coast and out to Skiathos, Skopelos, Alonissos, the marine park. We can change it day by day.</p>
+          <a href="mailto:nikolaj@sitehub.dk?subject=Skippered%20week%20enquiry">Ask about a skippered week →</a>
+        </div>
+        <div class="card">
+          <p class="eyebrow">Offer B — Bareboat</p>
+          <h3>Two weeks. You skipper. We hand you the keys.</h3>
+          <p>For sailors with ICC, RYA Day Skipper, Danish Yachtskipper 3 / Duelighedsbevis or equivalent, plus one crew member with declared sailing experience. Greek VHF rules vary — Odyssey confirms what your specific licence covers when we book. Xanemo handles 18 knots easily and points to weather better than her age suggests.</p>
+          <a href="mailto:nikolaj@sitehub.dk?subject=Bareboat%20fortnight%20enquiry">Ask about a bareboat fortnight →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2><em>Xanemo</em>, in numbers.</h2>
+      <div class="specs">
+        <div><strong>Builder</strong></div><div>Beneteau Oceanis 440, Jubilee edition</div>
+        <div><strong>Layout</strong></div><div>Owner's version — one wheel, not two</div>
+        <div><strong>Year</strong></div><div>Built 1995, refit 2023</div>
+        <div><strong>Length × beam</strong></div><div>13.70 m × 4.25 m, draft 1.80 m</div>
+        <div><strong>Cabins / berths</strong></div><div>4 cabins · 8 + 1 berths · 2 heads</div>
+        <div><strong>Sails</strong></div><div>Quantum main (2017) · new Quantum genoa (2024)</div>
+        <div><strong>Engine</strong></div><div>Yanmar 4JH4-TE 75 HP turbo · bow thruster (2024)</div>
+        <div><strong>Off-grid</strong></div><div>Solar cells · wind generator · stays connected on mobile</div>
+        <div><strong>Tender</strong></div><div>Dinghy with outboard included · paddle board rentable</div>
+        <div><strong>Speed</strong></div><div>8–10 knots cruising; one of the faster boats in the area</div>
+        <div><strong>Flag / base</strong></div><div>Greek · Volos</div>
+      </div>
+      <p style="margin-top:28px;"><a href="https://odysseysailing.gr/charter/oceanis-440-volos/" target="_blank" rel="noopener">Full inventory, layout, and gallery on the Odyssey Sailing listing →</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>The crew.</h2>
+      <p style="margin-bottom: 36px;">The captains are people I sail with myself — Greek skippers who also help keep the boat through the seasons. More to come; we'll fill these in as the season fills.</p>
+      <div class="crew">
+        <div class="person">
+          <div class="placeholder-photo"></div>
+          <h3>Nasos</h3>
+          <p class="role">Captain</p>
+          <p>Easy-going skipper who knows these waters and helps me look after Xanemo through the winter. Best with mixed-experience groups.</p>
+        </div>
+        <div class="person">
+          <div class="placeholder-photo"></div>
+          <h3>⟨ Captain 2 ⟩</h3>
+          <p class="role">Captain</p>
+          <p>Bio to come — one of the Greek skippers I sail with, available for skippered weeks across the summer.</p>
+        </div>
+        <div class="person">
+          <div class="placeholder-photo"></div>
+          <h3>⟨ Captain 3 ⟩</h3>
+          <p class="role">Captain</p>
+          <p>Bio to come — alternates with Nasos depending on the week and your dates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Why the Sporades, and not where everyone else goes.</h2>
+      <p>The Cyclades are spectacular, expensive, and full. The Ionian is sheltered, family-easy, and full of fleets. The Sporades sit between Athens and Thessaloniki on the map, accessed via Skiathos airport or a drive from Athens. Most charter networks don't have a base there. That is the entire point.</p>
+      <p>From Volos you sail across to Skiathos in a long morning, into the Pelion coast for the quieter bays, out to Skopelos for the town (and the Mamma Mia church if you must), and on to Alonissos and the marine park beyond — the only marine park in Greece, with seals, dolphins, and anchorages where you'll often be the only boat at sunset.</p>
+      <p>Skiathos is the busy one — useful for the airport, otherwise a brief stop. The rest are quieter. The marine park at the end of the chain is quieter still. A week is enough to see most of it without rushing. A fortnight lets you go properly slow.</p>
+    </div>
+  </section>
+
+  <section class="pricing">
+    <div class="container">
+      <h2>About the price.</h2>
+      <p>Xanemo's published 2026 weekly rate is set by season, between €1,800 and €2,900. Direct booking through me gets <strong>10% off as standard</strong>, deeper for last-minute. Odyssey Sailing in Volos handles the paperwork — they're the operational backbone, and their cut is what makes the whole thing work. What direct booking actually skips is the 20% that third-party rental portals layer on top.</p>
+      <table class="rates">
+        <tr><td>13 Jun – 25 Jul</td><td>€2,600</td></tr>
+        <tr class="highlight"><td>25 Jul – 22 Aug</td><td>€2,800</td></tr>
+        <tr class="highlight"><td>22 Aug – 12 Sep (peak)</td><td>€2,900</td></tr>
+        <tr><td>12 Sep – 26 Sep</td><td>€2,500</td></tr>
+      </table>
+      <p style="margin-top: 24px;">A skippered week is the matrix rate (less 10%) plus the captain's day rate. A bareboat fortnight is two matrix weeks (less 10%) plus a refundable damage deposit. Fuel beyond a starting allowance, marina fees, and provisioning are extras.</p>
+      <p>Write to me with your dates. I'll come back the same day with the exact number and what's included.</p>
+      <p style="margin-top:28px;"><a class="btn" href="mailto:nikolaj@sitehub.dk?subject=Available%20weeks%20%E2%80%94%20Xanemo">Send your dates →</a></p>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <h2>What guests say.</h2>
+      <p style="margin-bottom: 36px;">Two new testimonials in production. Below: placeholder content showing the form. Real quotes from confirmed guests will replace these before launch — older reviews from prior charters meanwhile on <a href="https://odysseysailing.gr/charter/oceanis-440-volos/#reviews" target="_blank" rel="noopener">the Odyssey listing</a>.</p>
+      <div class="grid">
+        <div class="testimonial">
+          <span class="placeholder-tag">Placeholder</span>
+          <p class="quote">We spent the week between Skopelos and the marine park. Nasos knew exactly which bays were quiet on a Wednesday and which had the better taverna. The kids learned to handle the tender. We barely went into a marina — that was the point.</p>
+          <div class="meta">
+            <div class="avatar"></div>
+            <div>
+              <div class="name">⟨ Guest name ⟩</div>
+              <div class="role">Skippered week, July 2024 — family of five</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <span class="placeholder-tag">Placeholder</span>
+          <p class="quote">Xanemo points well to weather for her age, and the new genoa makes a difference. Two weeks out of Volos with full Sporades range — the quietest weather window we've had in years. Nikolaj's handover was real: keys, briefing, and out of the way.</p>
+          <div class="meta">
+            <div class="avatar"></div>
+            <div>
+              <div class="name">⟨ Guest name ⟩</div>
+              <div class="role">Bareboat fortnight, May 2024 — four crew</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <h2>Write directly.</h2>
+      <p>I read every message myself.</p>
+      <a class="email" href="mailto:nikolaj@sitehub.dk">nikolaj@sitehub.dk</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      WeSail Greece Single-Member P.C. · Greek Tax ID 801692534 · Base: Volos, Greece<br>
+      Greek-side operations and bonding by <a href="https://odysseysailing.gr/charter/oceanis-440-volos/" target="_blank" rel="noopener">Odyssey Sailing</a> (GNTO–EOT registered).<br>
+      © 2026 WeSail Greece. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
