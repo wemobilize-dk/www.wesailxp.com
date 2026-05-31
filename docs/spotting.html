@@ -128,7 +128,7 @@ footer a { color: rgba(244,239,230,0.9); }
   <section>
     <div class="container">
       <h2>Hvor vi mødte dem.</h2>
-      <p>Seks delfinmøder mellem 2021 og 2025 — fra Kykladerne i syd til det nordlige Ægæerhav. Klik en markør for dato og billeder. Et par af dem fangede vi kun på video.</p>
+      <p>Seks delfinmøder mellem 2021 og 2025 — fra Kykladerne i syd til det nordlige Ægæerhav. Klik en markør for dato og billeder. Én af dem fangede vi kun på video.</p>
       <div id="map"></div>
     </div>
   </section>
@@ -138,19 +138,23 @@ footer a { color: rgba(244,239,230,0.9); }
       <h2>Delfiner.</h2>
       <p>Delfiner følger ofte med båden et stykke — i bovbølgen, eller bare på vej forbi. Her er de gange vi nåede at fange dem — på billede eller video. Klik på et møde for at se det.</p>
       <div class="spots">
-        <figure class="spot" data-gallery="e1" tabindex="0" role="button" aria-label="Se billeder fra 12. juni 2021">
+        <figure class="spot has-video" data-gallery="e1" data-video="greece- - 40.MOV" tabindex="0" role="button" aria-label="Se billeder fra 12. juni 2021">
+          <span class="video-badge" aria-hidden="true">▶ Video</span>
           <img src="public/pics/spotting/dolphin-e1-52-t.jpg" alt="Delfin lige under overfladen i klart blåt vand, set fra dækket" loading="lazy">
           <figcaption><span class="date">12. juni 2021</span><span class="count">6 billeder ›</span></figcaption>
         </figure>
-        <figure class="spot" data-gallery="e4" tabindex="0" role="button" aria-label="Se billeder fra 28. april 2024">
+        <figure class="spot has-video" data-gallery="e4" data-video="greece- - 1923.MOV" tabindex="0" role="button" aria-label="Se billeder fra 28. april 2024">
+          <span class="video-badge" aria-hidden="true">▶ Video</span>
           <img src="public/pics/spotting/dolphin-e4-1908-t.jpg" alt="To delfiner bryder overfladen ved siden af båden" loading="lazy">
           <figcaption><span class="date">28. april 2024</span><span class="count">8 billeder ›</span></figcaption>
         </figure>
-        <figure class="spot" data-gallery="e2" tabindex="0" role="button" aria-label="Se billede fra 14. oktober 2022">
+        <figure class="spot has-video" data-gallery="e2" data-video="greece- - 1512.MOV" tabindex="0" role="button" aria-label="Se billede fra 14. oktober 2022">
+          <span class="video-badge" aria-hidden="true">▶ Video</span>
           <img src="public/pics/spotting/dolphin-e2-1512-t.jpg" alt="Delfin springer ud af vandet under en grå himmel" loading="lazy">
           <figcaption><span class="date">14. oktober 2022</span><span class="count">1 billede ›</span></figcaption>
         </figure>
-        <figure class="spot" data-gallery="e3" tabindex="0" role="button" aria-label="Se billede fra 13. juli 2023">
+        <figure class="spot has-video" data-gallery="e3" data-video="greece- - 1697.MOV" tabindex="0" role="button" aria-label="Se billede fra 13. juli 2023">
+          <span class="video-badge" aria-hidden="true">▶ Video</span>
           <img src="public/pics/spotting/dolphin-e3-1697-t.jpg" alt="Rygfinne der bryder overfladen i det åbne hav" loading="lazy">
           <figcaption><span class="date">13. juli 2023</span><span class="count">1 billede ›</span></figcaption>
         </figure>
@@ -162,8 +166,8 @@ footer a { color: rgba(244,239,230,0.9); }
         </figure>
         <figure class="spot has-video" data-gallery="v2430" data-video="greece- - 2430.MOV" tabindex="0" role="button" aria-label="Se billede fra 19. oktober 2024">
           <span class="video-badge" aria-hidden="true">▶ Video</span>
-          <img src="public/pics/spotting/dolphin-2430-t.jpg" alt="Delfin nord for Skiathos, oktober 2024 — billede fra video" loading="lazy">
-          <figcaption><span class="date">19. oktober 2024</span><span class="count">video ›</span></figcaption>
+          <img src="public/pics/spotting/dolphin-2426-t.jpg" alt="Delfin nord for Skiathos, 19. oktober 2024" loading="lazy">
+          <figcaption><span class="date">19. oktober 2024</span><span class="count">billede + video ›</span></figcaption>
         </figure>
       </div>
     </div>
@@ -216,7 +220,7 @@ footer a { color: rgba(244,239,230,0.9); }
     e3: ["dolphin-e3-1697"],
     e4: ["dolphin-e4-1908","dolphin-e4-1910","dolphin-e4-1913","dolphin-e4-1914","dolphin-e4-1912","dolphin-e4-1917","dolphin-e4-1919","dolphin-e4-1920"],
     v2535: ["dolphin-2535"],
-    v2430: ["dolphin-2430"],
+    v2430: ["dolphin-2426","dolphin-2430"],
     turtle: ["turtle-1702"]
   };
 
@@ -255,12 +259,12 @@ footer a { color: rgba(244,239,230,0.9); }
   /* map */
   (function(){
     const SPOTS = [
-      {lat:37.14813, lon:25.31461, date:"12. juni 2021",    n:6, hero:"dolphin-e1-52",   key:"e1", kind:"dolphin"},
-      {lat:39.12637, lon:23.30826, date:"14. oktober 2022", n:1, hero:"dolphin-e2-1512", key:"e2", kind:"dolphin"},
-      {lat:38.89053, lon:24.39258, date:"13. juli 2023",    n:1, hero:"dolphin-e3-1697", key:"e3", kind:"dolphin"},
-      {lat:38.93407, lon:23.57725, date:"28. april 2024",   n:8, hero:"dolphin-e4-1908", key:"e4", kind:"dolphin"},
+      {lat:37.14813, lon:25.31461, date:"12. juni 2021",    n:6, hero:"dolphin-e1-52",   key:"e1", kind:"dolphin", hasVideo:true},
+      {lat:39.12637, lon:23.30826, date:"14. oktober 2022", n:1, hero:"dolphin-e2-1512", key:"e2", kind:"dolphin", hasVideo:true},
+      {lat:38.89053, lon:24.39258, date:"13. juli 2023",    n:1, hero:"dolphin-e3-1697", key:"e3", kind:"dolphin", hasVideo:true},
+      {lat:38.93407, lon:23.57725, date:"28. april 2024",   n:8, hero:"dolphin-e4-1908", key:"e4", kind:"dolphin", hasVideo:true},
       {lat:39.08860, lon:23.16500, date:"11. juli 2025",    video:true, hero:"dolphin-2535", key:"v2535", kind:"dolphin"},
-      {lat:39.23640, lon:23.59990, date:"19. oktober 2024", video:true, hero:"dolphin-2430", key:"v2430", kind:"dolphin"},
+      {lat:39.18923, lon:23.65852, date:"19. oktober 2024", n:1, hasVideo:true, hero:"dolphin-2426", key:"v2430", kind:"dolphin"},
       {lat:38.97303, lon:24.24127, date:"13. juli 2023",    n:1, hero:"turtle-1702",     key:"turtle", kind:"turtle"}
     ];
     const map = L.map('map', {scrollWheelZoom:false}).setView([38.4, 24.2], 6);
@@ -278,7 +282,7 @@ footer a { color: rgba(244,239,230,0.9); }
         fillOpacity: dolphin ? 0.9 : 0.55
       }).addTo(map);
       const title = dolphin ? "Delfiner" : "Skildpadde?";
-      const sub = dolphin ? (s.video ? (s.date + " · video") : (s.date + " · " + s.n + (s.n > 1 ? " billeder" : " billede"))) : (s.date + " · uafklaret");
+      const sub = !dolphin ? (s.date + " · uafklaret") : s.video ? (s.date + " · video") : (s.date + " · " + s.n + (s.n > 1 ? " billeder" : " billede") + (s.hasVideo ? " · video" : ""));
       m.bindPopup('<strong>' + title + '</strong><br>' + sub +
         '<br><img src="' + BASE + s.hero + '-t.jpg" alt="" onclick="openGallery(\'' + s.key + '\')">');
       markers.push(m);
