@@ -132,6 +132,22 @@
     .contact p { margin: 0 auto 24px; }
     .contact a.email { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.6rem; color: var(--navy); text-decoration: underline; text-decoration-color: var(--sand); text-underline-offset: 6px; }
 
+    /* photo carousel (scroll-snap, minimal JS) */
+    .photo-carousel { padding: 34px 0 64px; }
+    .photo-carousel h2 { margin: 0 0 8px; }
+    .photo-carousel .intro { color: var(--muted); margin: 0 0 24px; max-width: 64ch; }
+    .carousel { position: relative; max-width: 1100px; margin: 0 auto; }
+    .carousel-track { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 2px 2px 8px; }
+    .carousel-track::-webkit-scrollbar { display: none; }
+    .carousel-track figure { margin: 0; flex: 0 0 auto; width: min(80%, 720px); scroll-snap-align: center; }
+    .carousel-track img { width: 100%; height: clamp(280px, 50vh, 540px); object-fit: cover; display: block; background: var(--rule); border-radius: 2px; }
+    .carousel.guests .carousel-track figure { width: min(62%, 320px); }
+    .carousel.guests .carousel-track img { height: clamp(220px, 34vh, 340px); }
+    .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(16,42,58,0.55); color: #fff; font-family: Georgia, serif; font-size: 1.7rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2; }
+    .carousel-btn:hover { background: var(--navy); }
+    .carousel-btn.prev { left: 6px; } .carousel-btn.next { right: 6px; }
+    @media (max-width: 600px) { .carousel-btn { display: none; } .carousel-track figure { width: 88%; } .carousel.guests .carousel-track figure { width: 72%; } }
+
     footer { background: var(--navy); color: rgba(244,239,230,0.7); font-size: 0.85rem; padding: 36px 0 44px; line-height: 1.7; }
     footer a { color: rgba(244,239,230,0.9); }
   </style>
@@ -145,6 +161,7 @@
       <a href="/en/sailing-with-captain.html">Sail with a captain</a>
       <a href="/en/be-a-captain.html">Be a captain</a>
       <a href="/en/getting-there.html">Getting there</a>
+      <a href="/en/spotting.html">Wildlife</a>
     </div>
     <div class="lang-mini">
       <a href="/" lang="da" hreflang="da">DA</a><span class="sep">|</span><a href="/en/" class="active" lang="en" hreflang="en">EN</a>
@@ -188,6 +205,18 @@
     <div class="container" style="max-width: 1100px;">
       <img src="../public/pics/xanemo-overview.jpg" alt="Xanemo from the drone, plus deck, saloon and an evening onboard" loading="lazy" style="width: 100%; height: auto; display: block; margin: 0 auto;">
       <p style="text-align: center; color: var(--muted); font-style: italic; font-size: 0.92rem; margin: 16px auto 0; max-width: 560px;">A composite view: Xanemo from above, on deck, an evening onboard, a piece of the Sporades. Classic boat, classic waters.</p>
+    </div>
+  </section>
+
+  <section class="photo-carousel">
+    <div class="container" style="max-width:1100px;">
+      <h2>Aboard and underway.</h2>
+      <p class="intro">A selection from the years in the Sporades and the rest of Greece — sailing, anchorages, the light. Swipe for more.</p>
+      <div class="carousel">
+        <button class="carousel-btn prev" type="button" aria-label="Previous image">‹</button>
+        <div class="carousel-track" data-set="sail" role="group" aria-label="Photos aboard"></div>
+        <button class="carousel-btn next" type="button" aria-label="Next image">›</button>
+      </div>
     </div>
   </section>
 
@@ -395,5 +424,26 @@
     </div>
   </footer>
 
+  <script>
+  (function(){
+    var COUNT = { sail: 28, guest: 10 };
+    var BASE = "../public/pics/carousel/";
+    document.querySelectorAll('.carousel-track[data-set]').forEach(function(track){
+      var set = track.dataset.set, n = COUNT[set] || 0, html = "";
+      for (var i = 1; i <= n; i++) {
+        var b = set + "-" + (i < 10 ? "0" + i : "" + i);
+        html += '<figure><img loading="lazy" alt="" src="' + BASE + b + '-1200.jpg" srcset="' + BASE + b + '-1200.jpg 1200w, ' + BASE + b + '.jpg 2400w" sizes="(max-width:600px) 88vw, 720px"></figure>';
+      }
+      track.innerHTML = html;
+    });
+    document.querySelectorAll('.carousel').forEach(function(c){
+      var t = c.querySelector('.carousel-track');
+      function step(){ var f = t.querySelector('figure'); return f ? f.getBoundingClientRect().width + 14 : t.clientWidth * 0.8; }
+      var p = c.querySelector('.prev'), nx = c.querySelector('.next');
+      if (p) p.addEventListener('click', function(){ t.scrollBy({ left: -step(), behavior: 'smooth' }); });
+      if (nx) nx.addEventListener('click', function(){ t.scrollBy({ left: step(), behavior: 'smooth' }); });
+    });
+  })();
+  </script>
 </body>
 </html>

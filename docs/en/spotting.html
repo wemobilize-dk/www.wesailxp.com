@@ -1,0 +1,273 @@
+<!doctype html>
+<!--
+   ┌───────────────────────────────────────────────────────────────────────┐
+   │ ENGLISH VERSION                                                        │
+   │ You are editing the English page. Danish lives in /spotting.html.      │
+   │ Keep the language clean — don't mix English and Danish in one file.    │
+   │ COPY: drafted by Claude Code — Cowork should refine the voice.         │
+   └───────────────────────────────────────────────────────────────────────┘
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wildlife out there — WeSail</title>
+  <meta name="description" content="Dolphins and marine life we've met while sailing Greek waters, 2021–2024 — mapped by where, with an honest note on how hard sea turtles are to spot.">
+  <meta property="og:title" content="Wildlife out there — WeSail">
+  <meta property="og:description" content="Four dolphin encounters from the Cyclades to the northern Aegean, logged with date and position. Plus: which sea turtles can you expect to see?">
+  <meta property="og:image" content="https://www.wesailxp.com/public/pics/spotting/dolphin-e1-52.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <link rel="canonical" href="https://www.wesailxp.com/en/spotting.html">
+  <link rel="alternate" hreflang="da" href="https://www.wesailxp.com/spotting.html">
+  <link rel="alternate" hreflang="en" href="https://www.wesailxp.com/en/spotting.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+:root { --navy:#102a3a; --linen:#f4efe6; --sand:#c9a77a; --ink:#1a1a1a; --muted:#6b6b6b; --rule:#e3ddd0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: var(--linen); line-height: 1.55; font-size: 17px; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; color: var(--navy); line-height: 1.15; letter-spacing: -0.01em; }
+a { color: var(--navy); }
+.container { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+
+/* nav */
+.main-nav { background: var(--navy); padding: 14px 28px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; font-size: 0.92rem; }
+.main-nav .brand { font-family: 'Cormorant Garamond', serif; color: white; font-size: 1.25rem; text-decoration: none; font-weight: 500; }
+.main-nav .links { display: flex; gap: 22px; flex: 1; flex-wrap: wrap; }
+.main-nav .links a { color: rgba(255,255,255,0.82); text-decoration: none; }
+.main-nav .links a:hover, .main-nav .links a.active { color: var(--sand); }
+.main-nav .lang-mini { display: flex; gap: 2px; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.main-nav .lang-mini a { color: rgba(255,255,255,0.6); text-decoration: none; padding: 0 6px; }
+.main-nav .lang-mini a.active { color: white; font-weight: 600; }
+.main-nav .lang-mini .sep { color: rgba(255,255,255,0.3); }
+@media (max-width: 720px) { .main-nav { padding: 10px 16px; gap: 10px; font-size: 0.85rem; } .main-nav .links { gap: 14px; order: 3; flex-basis: 100%; } }
+
+/* page header */
+.page-header { background: var(--navy); color: white; padding: 60px 0 70px; border-bottom: 4px solid var(--sand); }
+.page-header h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 12px; }
+.page-header p.lead { color: rgba(244,239,230,0.88); font-size: 1.1rem; margin: 0; max-width: 64ch; }
+
+section { padding: 56px 0; border-bottom: 1px solid var(--rule); }
+section h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin: 0 0 18px; }
+section p { margin: 0 0 16px; max-width: 64ch; }
+section ul { max-width: 64ch; padding-left: 0; list-style: none; }
+section ul li { margin: 0 0 14px; padding-left: 18px; position: relative; }
+section ul li::before { content: "—"; position: absolute; left: 0; color: var(--sand); }
+
+.callout { background: white; border-left: 3px solid var(--sand); padding: 18px 24px; margin: 24px 0 0; max-width: 64ch; }
+.callout strong { color: var(--navy); }
+
+/* map */
+#map { height: 440px; width: 100%; margin: 8px 0 0; border: 1px solid var(--rule); background: var(--rule); z-index: 0; }
+@media (max-width: 600px) { #map { height: 340px; } }
+.leaflet-popup-content { font-family: 'Inter', sans-serif; font-size: 0.9rem; line-height: 1.4; margin: 12px 14px; }
+.leaflet-popup-content strong { color: var(--navy); }
+.leaflet-popup-content img { width: 170px; display: block; margin-top: 8px; border-radius: 2px; cursor: pointer; }
+
+/* spotting cards */
+.spots { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 8px; }
+@media (max-width: 600px) { .spots { grid-template-columns: 1fr; } }
+.spot { margin: 0; cursor: pointer; background: white; border: 1px solid var(--rule); overflow: hidden; transition: transform .15s, box-shadow .15s; }
+.spot:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(16,42,58,0.12); }
+.spot img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: var(--rule); }
+.spot figcaption { padding: 14px 18px; display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.spot .date { color: var(--navy); font-weight: 500; }
+.spot .count { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
+
+/* turtle */
+.turtle-wrap { display: grid; grid-template-columns: 280px 1fr; gap: 28px; align-items: start; }
+@media (max-width: 600px) { .turtle-wrap { grid-template-columns: 1fr; } }
+.turtle-figure { margin: 0; cursor: pointer; }
+.turtle-figure img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; border: 1px solid var(--rule); background: var(--rule); }
+.turtle-figure figcaption { font-style: italic; color: var(--muted); font-size: 0.82rem; margin-top: 8px; }
+
+/* lightbox */
+.lb { position: fixed; inset: 0; background: rgba(16,42,58,0.95); display: none; align-items: center; justify-content: center; z-index: 1000; }
+.lb.open { display: flex; }
+.lb-img { max-width: 92vw; max-height: 86vh; object-fit: contain; box-shadow: 0 12px 50px rgba(0,0,0,0.5); }
+.lb button { position: absolute; background: none; border: 0; color: #fff; cursor: pointer; font-family: Georgia, serif; }
+.lb-close { top: 16px; right: 24px; font-size: 2.4rem; line-height: 1; }
+.lb-prev, .lb-next { top: 50%; transform: translateY(-50%); font-size: 3rem; padding: 0 18px; }
+.lb-prev { left: 6px; } .lb-next { right: 6px; }
+.lb-counter { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: rgba(255,255,255,0.8); font-size: 0.9rem; letter-spacing: 0.08em; }
+.lb button:hover { color: var(--sand); }
+@media (max-width: 600px) { .lb-prev, .lb-next { font-size: 2.2rem; padding: 0 8px; } }
+
+footer { background: var(--navy); color: rgba(244,239,230,0.7); font-size: 0.85rem; padding: 36px 0 44px; line-height: 1.7; }
+footer a { color: rgba(244,239,230,0.9); }
+  </style>
+</head>
+<body>
+  <nav class="main-nav" aria-label="Main menu">
+    <a class="brand" href="/en/">WeSail</a>
+    <div class="links">
+        <a href="/en/">Home</a>
+        <a href="/en/sailing-with-captain.html">Sail with a captain</a>
+        <a href="/en/be-a-captain.html">Be a captain</a>
+        <a href="/en/getting-there.html">Getting there</a>
+        <a href="/en/spotting.html" class="active">Wildlife</a>
+    </div>
+    <div class="lang-mini">
+      <a href="/spotting.html" lang="da" hreflang="da">DA</a><span class="sep">|</span><a href="/en/spotting.html" class="active" lang="en" hreflang="en">EN</a>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>What we've met out there.</h1>
+      <p class="lead">The marine life we've crossed paths with under sail, trip after trip — mostly dolphins, and one we're not sure about. Each encounter logged with date and position from the photos' GPS.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <h2>Where we met them.</h2>
+      <p>Four dolphin encounters between 2021 and 2024 — from the Cyclades in the south to the northern Aegean. Click a marker for the date and photos.</p>
+      <div id="map"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Dolphins.</h2>
+      <p>Dolphins will often run with the boat a while — in the bow wave, or just passing through. Here are the four times we managed to get them on camera. Click an encounter to see the whole set.</p>
+      <div class="spots">
+        <figure class="spot" data-gallery="e1" tabindex="0" role="button" aria-label="See photos from 12 June 2021">
+          <img src="../public/pics/spotting/dolphin-e1-52-t.jpg" alt="A dolphin just below the surface in clear blue water, seen from the deck" loading="lazy">
+          <figcaption><span class="date">12 June 2021</span><span class="count">6 photos ›</span></figcaption>
+        </figure>
+        <figure class="spot" data-gallery="e4" tabindex="0" role="button" aria-label="See photos from 28 April 2024">
+          <img src="../public/pics/spotting/dolphin-e4-1908-t.jpg" alt="Two dolphins breaking the surface alongside the boat" loading="lazy">
+          <figcaption><span class="date">28 April 2024</span><span class="count">8 photos ›</span></figcaption>
+        </figure>
+        <figure class="spot" data-gallery="e2" tabindex="0" role="button" aria-label="See photo from 14 October 2022">
+          <img src="../public/pics/spotting/dolphin-e2-1512-t.jpg" alt="A dolphin leaping out of the water under a grey sky" loading="lazy">
+          <figcaption><span class="date">14 October 2022</span><span class="count">1 photo ›</span></figcaption>
+        </figure>
+        <figure class="spot" data-gallery="e3" tabindex="0" role="button" aria-label="See photo from 13 July 2023">
+          <img src="../public/pics/spotting/dolphin-e3-1697-t.jpg" alt="A dorsal fin breaking the surface in open water" loading="lazy">
+          <figcaption><span class="date">13 July 2023</span><span class="count">1 photo ›</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Turtle?</h2>
+      <div class="turtle-wrap">
+        <figure class="turtle-figure" data-gallery="turtle" tabindex="0" role="button" aria-label="See the photo larger">
+          <img src="../public/pics/spotting/turtle-1702-t.jpg" alt="A small dark head breaking a calm sea surface — possibly a turtle" loading="lazy">
+          <figcaption>Aegean, July 2023 — unresolved. Judge for yourself.</figcaption>
+        </figure>
+        <div>
+          <p>Once we saw something break the surface — a small dark head, gone again before the camera caught it sharp. Maybe a turtle. Maybe not.</p>
+          <p>Sea turtles are hard to spot from a sailboat: they surface to breathe for only a few seconds, look like a piece of driftwood at distance, and are gone before you've focused. Three species live in the Mediterranean, and all three can in principle be seen in Greek waters:</p>
+          <ul>
+            <li><strong>Loggerhead</strong> (<em>Caretta caretta</em>) — the most common in Greece, and the one you're most likely to meet. Nests on Greek beaches.</li>
+            <li><strong>Green turtle</strong> (<em>Chelonia mydas</em>) — present too, usually as juveniles; it prefers warmer water, and its range is slowly expanding north.</li>
+            <li><strong>Leatherback</strong> (<em>Dermochelys coriacea</em>) — a rare visitor out in open water.</li>
+          </ul>
+          <p style="font-size:0.85rem;color:var(--muted);">Source: <a href="https://archelon.gr/en" target="_blank" rel="noopener">ARCHELON — Sea Turtle Protection Society of Greece</a>.</p>
+          <div class="callout"><strong>See one</strong> — or something that might be one? Take a phone photo. The GPS does the rest, and it ends up here on the map.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      WeSail Greece Single-Member P.C. · Greek Tax ID 801692534 · Base: Volos, Greece<br>Greek-side operations and bonding by <a href="https://odysseysailing.gr/charter/oceanis-440-volos/" target="_blank" rel="noopener">Odyssey Sailing</a> (GNTO–EOT registered).<br>© 2026 WeSail Greece. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- lightbox -->
+  <div id="lightbox" class="lb" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <button class="lb-close" aria-label="Close">×</button>
+    <button class="lb-prev" aria-label="Previous">‹</button>
+    <img class="lb-img" src="" alt="">
+    <button class="lb-next" aria-label="Next">›</button>
+    <div class="lb-counter"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+  const BASE = "../public/pics/spotting/";
+  const GALLERIES = {
+    e1: ["dolphin-e1-52","dolphin-e1-48","dolphin-e1-47","dolphin-e1-51","dolphin-e1-43","dolphin-e1-50"],
+    e2: ["dolphin-e2-1512"],
+    e3: ["dolphin-e3-1697"],
+    e4: ["dolphin-e4-1908","dolphin-e4-1910","dolphin-e4-1913","dolphin-e4-1914","dolphin-e4-1912","dolphin-e4-1917","dolphin-e4-1919","dolphin-e4-1920"],
+    turtle: ["turtle-1702"]
+  };
+
+  /* lightbox */
+  (function(){
+    const lb = document.getElementById('lightbox');
+    const img = lb.querySelector('.lb-img');
+    const counter = lb.querySelector('.lb-counter');
+    const prev = lb.querySelector('.lb-prev'), next = lb.querySelector('.lb-next');
+    let list = [], idx = 0;
+    function show(){
+      img.src = BASE + list[idx] + ".jpg";
+      counter.textContent = list.length > 1 ? (idx + 1) + " / " + list.length : "";
+      prev.style.display = next.style.display = list.length > 1 ? "block" : "none";
+    }
+    function open(key, start){ list = GALLERIES[key] || []; if(!list.length) return; idx = start || 0; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); show(); }
+    function close(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); img.src = ""; }
+    function nav(d){ idx = (idx + d + list.length) % list.length; show(); }
+    window.openGallery = open;
+    document.querySelectorAll('[data-gallery]').forEach(el => {
+      el.addEventListener('click', () => open(el.dataset.gallery, 0));
+      el.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(el.dataset.gallery, 0); } });
+    });
+    lb.querySelector('.lb-close').addEventListener('click', close);
+    prev.addEventListener('click', e => { e.stopPropagation(); nav(-1); });
+    next.addEventListener('click', e => { e.stopPropagation(); nav(1); });
+    lb.addEventListener('click', e => { if(e.target === lb) close(); });
+    document.addEventListener('keydown', e => {
+      if(!lb.classList.contains('open')) return;
+      if(e.key === 'Escape') close();
+      else if(e.key === 'ArrowLeft') nav(-1);
+      else if(e.key === 'ArrowRight') nav(1);
+    });
+  })();
+
+  /* map */
+  (function(){
+    const SPOTS = [
+      {lat:37.14813, lon:25.31461, date:"12 June 2021",     n:6, hero:"dolphin-e1-52",   key:"e1", kind:"dolphin"},
+      {lat:39.12637, lon:23.30826, date:"14 October 2022",  n:1, hero:"dolphin-e2-1512", key:"e2", kind:"dolphin"},
+      {lat:38.89053, lon:24.39258, date:"13 July 2023",     n:1, hero:"dolphin-e3-1697", key:"e3", kind:"dolphin"},
+      {lat:38.93407, lon:23.57725, date:"28 April 2024",    n:8, hero:"dolphin-e4-1908", key:"e4", kind:"dolphin"},
+      {lat:38.97303, lon:24.24127, date:"13 July 2023",     n:1, hero:"turtle-1702",     key:"turtle", kind:"turtle"}
+    ];
+    const map = L.map('map', {scrollWheelZoom:false}).setView([38.4, 24.2], 6);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd', maxZoom: 18
+    }).addTo(map);
+    const markers = [];
+    SPOTS.forEach(s => {
+      const dolphin = s.kind === "dolphin";
+      const m = L.circleMarker([s.lat, s.lon], {
+        radius: 9, weight: 2,
+        color: dolphin ? "#102a3a" : "#b8742a",
+        fillColor: dolphin ? "#c9a77a" : "#e0a458",
+        fillOpacity: dolphin ? 0.9 : 0.55
+      }).addTo(map);
+      const title = dolphin ? "Dolphins" : "Turtle?";
+      const sub = dolphin ? (s.date + " · " + s.n + (s.n > 1 ? " photos" : " photo")) : (s.date + " · unresolved");
+      m.bindPopup('<strong>' + title + '</strong><br>' + sub +
+        '<br><img src="' + BASE + s.hero + '-t.jpg" alt="" onclick="openGallery(\'' + s.key + '\')">');
+      markers.push(m);
+    });
+    map.fitBounds(L.featureGroup(markers).getBounds().pad(0.25));
+  })();
+  </script>
+</body>
+</html>
