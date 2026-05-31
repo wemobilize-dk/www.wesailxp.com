@@ -11,7 +11,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WeSail — Xanemo, the Sporades, direct from the owner</title>
-  <meta name="description" content="Xanemo — a 1995 Beneteau Oceanis 440, owner's version, refit 2023. Sailed from Volos in the Sporades. Booked direct from the owner; 10% off the published 2026 rate.">
+  <meta name="description" content="Xanemo — a 1995 Beneteau Oceanis 440, owner's version, refit 2023. Sailed from Volos in the Sporades. Booked direct from the owner; 20% off the published 2026 rate.">
   <meta property="og:title" content="WeSail — Xanemo, the Sporades, direct from the owner">
   <meta property="og:description" content="A classic Beneteau Oceanis 440, owner's version. Sailed from Volos through the Sporades by Greek captains the owner sails with himself.">
   <meta property="og:image" content="https://www.wesailxp.com/public/pics/xanemo-hero.jpg">
@@ -40,18 +40,28 @@
     a { color: var(--navy); }
     .container { max-width: 880px; margin: 0 auto; padding: 0 28px; }
 
-    /* language switcher */
-    .lang-switcher {
-      position: fixed; top: 18px; right: 24px; z-index: 100;
-      background: rgba(255,255,255,0.92); backdrop-filter: blur(6px);
-      padding: 6px 12px; border-radius: 4px;
-      font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
-      box-shadow: 0 2px 8px rgba(16,42,58,0.12);
-    }
-    .lang-switcher a { color: var(--muted); text-decoration: none; padding: 0 6px; }
-    .lang-switcher a.active { color: var(--navy); font-weight: 600; }
-    .lang-switcher a:hover { color: var(--navy); }
-    .lang-switcher .sep { color: var(--rule); padding: 0 2px; }
+    /* main nav (matches content pages — see /en/getting-there.html etc) */
+    .main-nav { background: var(--navy); padding: 14px 28px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; font-size: 0.92rem; }
+    .main-nav .brand { font-family: 'Cormorant Garamond', serif; color: white; font-size: 1.25rem; text-decoration: none; font-weight: 500; }
+    .main-nav .links { display: flex; gap: 22px; flex: 1; flex-wrap: wrap; }
+    .main-nav .links a { color: rgba(255,255,255,0.82); text-decoration: none; }
+    .main-nav .links a:hover, .main-nav .links a.active { color: var(--sand); }
+    .main-nav .lang-mini { display: flex; gap: 2px; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .main-nav .lang-mini a { color: rgba(255,255,255,0.6); text-decoration: none; padding: 0 6px; }
+    .main-nav .lang-mini a.active { color: white; font-weight: 600; }
+    .main-nav .lang-mini .sep { color: rgba(255,255,255,0.3); }
+    @media (max-width: 720px) { .main-nav { padding: 10px 16px; gap: 10px; font-size: 0.85rem; } .main-nav .links { gap: 14px; order: 3; flex-basis: 100%; } }
+
+    /* special places */
+    .special-places .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 880px; }
+    @media (max-width: 720px) { .special-places .grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .special-places .grid { grid-template-columns: 1fr; } }
+    .place { background: white; border: 1px solid var(--rule); overflow: hidden; }
+    .place .photo-stub { aspect-ratio: 4/3; background: linear-gradient(135deg, var(--rule) 0%, #d4cdb8 100%); display: flex; align-items: center; justify-content: center; color: var(--muted); font-style: italic; font-size: 0.8rem; }
+    .place .body { padding: 18px 20px; }
+    .place h3 { margin: 0 0 6px; font-size: 1.1rem; }
+    .place .description { font-size: 0.92rem; color: var(--ink); margin: 0 0 8px; }
+    .place .stub { font-size: 0.75rem; color: var(--sand); font-style: italic; letter-spacing: 0.04em; }
 
     /* hero */
     /* HERO PHOTO FRAMING — see comment in /index.html. background-position controls focal point. */
@@ -121,8 +131,17 @@
 </head>
 <body>
 
-  <nav class="lang-switcher" aria-label="Language">
-    <a href="/" lang="da" hreflang="da">DA</a><span class="sep">|</span><a href="/en/" class="active" lang="en" hreflang="en">EN</a>
+  <nav class="main-nav" aria-label="Main menu">
+    <a class="brand" href="/en/">WeSail</a>
+    <div class="links">
+      <a href="/en/" class="active">Home</a>
+      <a href="/en/sailing-with-captain.html">Sail with a captain</a>
+      <a href="/en/be-a-captain.html">Be a captain</a>
+      <a href="/en/getting-there.html">Getting there</a>
+    </div>
+    <div class="lang-mini">
+      <a href="/" lang="da" hreflang="da">DA</a><span class="sep">|</span><a href="/en/" class="active" lang="en" hreflang="en">EN</a>
+    </div>
   </nav>
 
   <header class="hero">
@@ -138,8 +157,15 @@
       <h2>How this is different.</h2>
       <p>The first time I sailed in Greece I was fourteen and had just learned enough English to make a friend on a beach in the Peloponnese. He sailed. I sailed. We wrote letters to each other for years afterwards. I kept coming back to Greece — first with friends, then with my own family, on chartered boats out of Croatia, Denmark, the Caribbean, and always, eventually, Greece. The places I came back to were the quiet ones. The bays without the fleet.</p>
       <p><em>Xanemo</em> is a 1995 Beneteau Oceanis 440, Jubilee edition — an <strong>owner's version</strong>, one wheel rather than the two you see on the modern charter boats. I bought her, refit her in 2023, fitted new Quantum sails, a bow thruster, solar and a wind generator, and put her in Volos. She is not new. She has a teak cockpit laid last year and 30 years of someone-having-loved-her. She is one of the faster boats in the area — which means good sailing on the days there's wind, and good anchorages on the days there isn't.</p>
-      <p>I share her with people I know, and people they know. Bookings come direct: Odyssey Sailing in Volos handles the paperwork and the captains; I handle the conversations. Direct-booked guests pay 10% under the published rate as standard, deeper for last-minute. The captains are Greek skippers I sail with myself — Nasos, for one, who also keeps the boat through the winter.</p>
+      <p>I share her with people I know, and people they know. Bookings come direct: Odyssey Sailing in Volos handles the paperwork and the captains; I handle the conversations. Direct-booked guests pay 20% under the published rate as standard, deeper for last-minute. The captains are Greek skippers I sail with myself — Nasos, for one, who also keeps the boat through the winter.</p>
       <div class="pullquote">If the closest thing you've heard to this is FTLF's gastebørs, but without the requirement to already be in the subculture — yes, this is that.</div>
+    </div>
+  </section>
+
+  <section style="padding: 50px 0; background: var(--linen);">
+    <div class="container" style="max-width: 1100px;">
+      <img src="../public/pics/xanemo-overview.jpg" alt="Xanemo from the drone, plus deck, saloon and an evening onboard" loading="lazy" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+      <p style="text-align: center; color: var(--muted); font-style: italic; font-size: 0.92rem; margin: 16px auto 0; max-width: 560px;">A composite view: Xanemo from above, on deck, an evening onboard, a piece of the Sporades. Classic boat, classic waters.</p>
     </div>
   </section>
 
@@ -222,14 +248,14 @@
   <section class="pricing">
     <div class="container">
       <h2>About the price.</h2>
-      <p>Xanemo's published 2026 weekly rate is set by season, between €1,800 and €2,900. Direct booking through me gets <strong>10% off as standard</strong>, deeper for last-minute. Odyssey Sailing in Volos handles the paperwork — they're the operational backbone, and their cut is what makes the whole thing work. What direct booking actually skips is the 20% that third-party rental portals layer on top.</p>
+      <p>Xanemo's published 2026 weekly rate is set by season, between €1,800 and €2,900. Direct booking through me gets <strong>20% off as standard</strong>, deeper for last-minute. Odyssey Sailing in Volos handles the paperwork — they're the operational backbone, and their cut is what makes the whole thing work. What direct booking actually skips is the 20% that third-party rental portals layer on top.</p>
       <table class="rates">
         <tr><td>13 Jun – 25 Jul</td><td>€2,600</td></tr>
         <tr class="highlight"><td>25 Jul – 22 Aug</td><td>€2,800</td></tr>
         <tr class="highlight"><td>22 Aug – 12 Sep (peak)</td><td>€2,900</td></tr>
         <tr><td>12 Sep – 26 Sep</td><td>€2,500</td></tr>
       </table>
-      <p style="margin-top: 24px;">A skippered week is the matrix rate (less 10%) plus the captain's day rate. A bareboat fortnight is two matrix weeks (less 10%) plus a refundable damage deposit. Fuel beyond a starting allowance, marina fees, and provisioning are extras.</p>
+      <p style="margin-top: 24px;">A skippered week is the matrix rate (less 20%) plus the captain's day rate. A bareboat fortnight is two matrix weeks (less 20%) plus a refundable damage deposit. Fuel beyond a starting allowance, marina fees, and provisioning are extras.</p>
       <p>Write to me with your dates. I'll come back the same day with the exact number and what's included.</p>
       <p style="margin-top:28px;"><a class="btn" href="mailto:nikolaj@sitehub.dk?subject=Available%20weeks%20%E2%80%94%20Xanemo">Send your dates →</a></p>
     </div>
@@ -260,6 +286,63 @@
               <div class="name">⟨ Guest name ⟩</div>
               <div class="role">Bareboat fortnight, May 2024 — four crew</div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="special-places">
+    <div class="container">
+      <h2>Places worth remembering.</h2>
+      <p style="margin-bottom: 36px;">A selection of anchorages, bays, and small harbours from the Sporades and the Pelion coast. Each with a short story. An interactive map coming once the photos are in.</p>
+      <div class="grid">
+        <div class="place">
+          <div class="photo-stub">⟨ Photo ⟩</div>
+          <div class="body">
+            <h3>Skopelos town</h3>
+            <p class="description">The white steps up to the Mamma Mia chapel, narrow lanes, fish dinners on terraces.</p>
+            <p class="stub">Story to come from Nikolaj</p>
+          </div>
+        </div>
+        <div class="place">
+          <div class="photo-stub">⟨ Photo ⟩</div>
+          <div class="body">
+            <h3>Steni Vala, Alonissos</h3>
+            <p class="description">Fisherman's taverna with the day's catch, good shelter from NW wind, one of the best evenings of the week.</p>
+            <p class="stub">Story to come from Nikolaj</p>
+          </div>
+        </div>
+        <div class="place">
+          <div class="photo-stub">⟨ Photo ⟩</div>
+          <div class="body">
+            <h3>Kyra Panagia</h3>
+            <p class="description">Inside the marine park. Anchor alone, monastery ruin on the hill, seals if you're lucky.</p>
+            <p class="stub">Story to come from Nikolaj</p>
+          </div>
+        </div>
+        <div class="place">
+          <div class="photo-stub">⟨ Photo ⟩</div>
+          <div class="body">
+            <h3>Trikeri, Pelion peninsula</h3>
+            <p class="description">Old fishing village. The natural first night out from Volos.</p>
+            <p class="stub">Story to come from Nikolaj</p>
+          </div>
+        </div>
+        <div class="place">
+          <div class="photo-stub">⟨ Photo ⟩</div>
+          <div class="body">
+            <h3>Damouchari, Pelion</h3>
+            <p class="description">The Mamma Mia bay. Clear water under steep cliffs, small harbour on the way back.</p>
+            <p class="stub">Story to come from Nikolaj</p>
+          </div>
+        </div>
+        <div class="place">
+          <div class="photo-stub">⟨ Photo ⟩</div>
+          <div class="body">
+            <h3>Volos waterfront</h3>
+            <p class="description">Tsipouradiko at sunset, a local specialty. Recommended before or after the charter.</p>
+            <p class="stub">Story to come from Nikolaj</p>
           </div>
         </div>
       </div>

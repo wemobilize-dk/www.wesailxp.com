@@ -11,7 +11,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WeSail — Sporaderne, ombord på Xanemo, direkte fra ejeren</title>
-  <meta name="description" content="Xanemo — en Beneteau Oceanis 440 fra 1995, ejerversion, restaureret 2023. Sejler fra Volos i Sporaderne. Booket direkte hos ejeren; 10% under listepris i 2026.">
+  <meta name="description" content="Xanemo — en Beneteau Oceanis 440 fra 1995, ejerversion, restaureret 2023. Sejler fra Volos i Sporaderne. Booket direkte hos ejeren; 20% under listepris i 2026.">
   <meta property="og:title" content="WeSail — Sporaderne, ombord på Xanemo, direkte fra ejeren">
   <meta property="og:description" content="En klassisk Beneteau Oceanis 440, ejerversion. Sejler fra Volos gennem Sporaderne med græske kaptajner ejeren selv sejler med.">
   <meta property="og:image" content="https://www.wesailxp.com/public/pics/xanemo-hero.jpg">
@@ -40,18 +40,28 @@
     a { color: var(--navy); }
     .container { max-width: 880px; margin: 0 auto; padding: 0 28px; }
 
-    /* language switcher */
-    .lang-switcher {
-      position: fixed; top: 18px; right: 24px; z-index: 100;
-      background: rgba(255,255,255,0.92); backdrop-filter: blur(6px);
-      padding: 6px 12px; border-radius: 4px;
-      font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
-      box-shadow: 0 2px 8px rgba(16,42,58,0.12);
-    }
-    .lang-switcher a { color: var(--muted); text-decoration: none; padding: 0 6px; }
-    .lang-switcher a.active { color: var(--navy); font-weight: 600; }
-    .lang-switcher a:hover { color: var(--navy); }
-    .lang-switcher .sep { color: var(--rule); padding: 0 2px; }
+    /* main nav (matches content pages — see /getting-there.html etc) */
+    .main-nav { background: var(--navy); padding: 14px 28px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; font-size: 0.92rem; }
+    .main-nav .brand { font-family: 'Cormorant Garamond', serif; color: white; font-size: 1.25rem; text-decoration: none; font-weight: 500; }
+    .main-nav .links { display: flex; gap: 22px; flex: 1; flex-wrap: wrap; }
+    .main-nav .links a { color: rgba(255,255,255,0.82); text-decoration: none; }
+    .main-nav .links a:hover, .main-nav .links a.active { color: var(--sand); }
+    .main-nav .lang-mini { display: flex; gap: 2px; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .main-nav .lang-mini a { color: rgba(255,255,255,0.6); text-decoration: none; padding: 0 6px; }
+    .main-nav .lang-mini a.active { color: white; font-weight: 600; }
+    .main-nav .lang-mini .sep { color: rgba(255,255,255,0.3); }
+    @media (max-width: 720px) { .main-nav { padding: 10px 16px; gap: 10px; font-size: 0.85rem; } .main-nav .links { gap: 14px; order: 3; flex-basis: 100%; } }
+
+    /* special places — placeholder card grid; Nikolaj fills photos + stories */
+    .special-places .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 880px; }
+    @media (max-width: 720px) { .special-places .grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .special-places .grid { grid-template-columns: 1fr; } }
+    .place { background: white; border: 1px solid var(--rule); overflow: hidden; }
+    .place .photo-stub { aspect-ratio: 4/3; background: linear-gradient(135deg, var(--rule) 0%, #d4cdb8 100%); display: flex; align-items: center; justify-content: center; color: var(--muted); font-style: italic; font-size: 0.8rem; }
+    .place .body { padding: 18px 20px; }
+    .place h3 { margin: 0 0 6px; font-size: 1.1rem; }
+    .place .description { font-size: 0.92rem; color: var(--ink); margin: 0 0 8px; }
+    .place .stub { font-size: 0.75rem; color: var(--sand); font-style: italic; letter-spacing: 0.04em; }
 
     /* hero */
     /* HERO PHOTO FRAMING — adjust 'background-position' if cliffs/dinghy get cropped.
@@ -123,8 +133,17 @@
 </head>
 <body>
 
-  <nav class="lang-switcher" aria-label="Sprog">
-    <a href="/" class="active" lang="da" hreflang="da">DA</a><span class="sep">|</span><a href="/en/" lang="en" hreflang="en">EN</a>
+  <nav class="main-nav" aria-label="Hovedmenu">
+    <a class="brand" href="/">WeSail</a>
+    <div class="links">
+      <a href="/" class="active">Forside</a>
+      <a href="/sailing-with-captain.html">Sejl med kaptajn</a>
+      <a href="/be-a-captain.html">Vær kaptajn</a>
+      <a href="/getting-there.html">Sådan kommer du derhen</a>
+    </div>
+    <div class="lang-mini">
+      <a href="/" class="active" lang="da" hreflang="da">DA</a><span class="sep">|</span><a href="/en/" lang="en" hreflang="en">EN</a>
+    </div>
   </nav>
 
   <header class="hero">
@@ -140,8 +159,15 @@
       <h2>Sådan er det her anderledes.</h2>
       <p>Første gang jeg sejlede i Grækenland var jeg fjorten og havde lige lært nok engelsk i skolen til at få en ven på en strand på Peloponnes. Han sejlede. Jeg sejlede. Vi skrev breve til hinanden i årevis bagefter. Jeg blev ved med at komme tilbage til Grækenland — først med venner, så med min egen familie, på chartrede både fra Kroatien, Danmark, Caribien, og altid, til sidst, Grækenland. Stederne jeg vendte tilbage til var de stille. Bugterne uden flåderne.</p>
       <p><em>Xanemo</em> er en 1995 Beneteau Oceanis 440, Jubilee edition — en <strong>ejerversion</strong>, ét rat i stedet for de to du ser på de nye charterbåde. Jeg købte hende, restaurerede hende i 2023, satte nye Quantum-sejl på, bovpropel, solceller og vindgenerator, og lagde hende i Volos. Hun er ikke ny. Hun har et teakdæk fra sidste år og 30 år af nogen-der-har-elsket-hende. Hun er en af de hurtigere både i området — det betyder god sejlads de dage der er vind, og gode ankerpladser de dage der ikke er.</p>
-      <p>Jeg deler hende med folk jeg kender og folk de kender. Bookinger kommer direkte: Odyssey Sailing i Volos klarer papirarbejdet og kaptajnerne; jeg klarer samtalerne. Gæster der booker direkte betaler 10% under listeprisen som standard, mere ved last-minute. Kaptajnerne er græske skippere jeg sejler med selv — Nasos, for eksempel, der også passer båden om vinteren.</p>
+      <p>Jeg deler hende med folk jeg kender og folk de kender. Bookinger kommer direkte: Odyssey Sailing i Volos klarer papirarbejdet og kaptajnerne; jeg klarer samtalerne. Gæster der booker direkte betaler 20% under listeprisen som standard, mere ved last-minute. Kaptajnerne er græske skippere jeg sejler med selv — Nasos, for eksempel, der også passer båden om vinteren.</p>
       <div class="pullquote">Hvis det tætteste du har hørt på det jeg beskriver er FTLF's gastebørs, bare uden kravet om at være i kulturen i forvejen — så ja, det er sådan her.</div>
+    </div>
+  </section>
+
+  <section style="padding: 50px 0; background: var(--linen);">
+    <div class="container" style="max-width: 1100px;">
+      <img src="public/pics/xanemo-overview.jpg" alt="Xanemo set fra droneoptik plus dækket, salon og en aften ombord" loading="lazy" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+      <p style="text-align: center; color: var(--muted); font-style: italic; font-size: 0.92rem; margin: 16px auto 0; max-width: 560px;">Et samlet blik: Xanemo set fra oven, dækket, en aften ombord, et stykke Sporaderne. Klassisk båd, klassisk farvande.</p>
     </div>
   </section>
 
@@ -224,14 +250,14 @@
   <section class="pricing">
     <div class="container">
       <h2>Om prisen.</h2>
-      <p>Xanemo's offentliggjorte ugepris for 2026 varierer efter sæson, mellem €1.800 og €2.900. Direkte booking gennem mig giver <strong>10% rabat som standard</strong>, dybere ved last-minute. Odyssey Sailing i Volos klarer papirarbejdet — det er den operationelle rygrad, og deres del af kagen er det der får det hele til at fungere. Det direkte booking faktisk sparer, er de 20% som tredjeparts-portaler lægger oven i.</p>
+      <p>Xanemo's offentliggjorte ugepris for 2026 varierer efter sæson, mellem €1.800 og €2.900. Direkte booking gennem mig giver <strong>20% rabat som standard</strong>, dybere ved last-minute. Odyssey Sailing i Volos klarer papirarbejdet — det er den operationelle rygrad, og deres del af kagen er det der får det hele til at fungere. Det direkte booking faktisk sparer, er de 20% som tredjeparts-portaler lægger oven i.</p>
       <table class="rates">
         <tr><td>13. jun – 25. jul</td><td>€2.600</td></tr>
         <tr class="highlight"><td>25. jul – 22. aug</td><td>€2.800</td></tr>
         <tr class="highlight"><td>22. aug – 12. sep (højsæson)</td><td>€2.900</td></tr>
         <tr><td>12. sep – 26. sep</td><td>€2.500</td></tr>
       </table>
-      <p style="margin-top: 24px;">En skipperet uge er listeprisen (minus 10%) plus kaptajnens dagpenge. To uger bareboat er to listepriser (minus 10%) plus et tilbagebetalbart depositum. Diesel ud over en startmængde, havneafgifter og forplejning er ekstra.</p>
+      <p style="margin-top: 24px;">En skipperet uge er listeprisen (minus 20%) plus kaptajnens dagpenge. To uger bareboat er to listepriser (minus 20%) plus et tilbagebetalbart depositum. Diesel ud over en startmængde, havneafgifter og forplejning er ekstra.</p>
       <p>Skriv til mig med dine datoer. Jeg vender tilbage samme dag med den eksakte pris og hvad der er inkluderet.</p>
       <p style="margin-top:28px;"><a class="btn" href="mailto:nikolaj@sitehub.dk?subject=Ledige%20uger%20%E2%80%94%20Xanemo">Send dine datoer →</a></p>
     </div>
@@ -262,6 +288,63 @@
               <div class="name">⟨ Gæstens navn ⟩</div>
               <div class="role">Bareboat 14 dage, maj 2024 — fire i besætningen</div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="special-places">
+    <div class="container">
+      <h2>Steder værd at huske.</h2>
+      <p style="margin-bottom: 36px;">Et udvalg af ankerpladser, bugter og småhavne fra Sporaderne og Pelion-kysten. Hver med en kort historie. Et klikbart kort kommer, når billederne er sat sammen.</p>
+      <div class="grid">
+        <div class="place">
+          <div class="photo-stub">⟨ Foto ⟩</div>
+          <div class="body">
+            <h3>Skopelos by</h3>
+            <p class="description">Den hvide trappe op til Mamma Mia-kirken, smalle gader, fiskeretter på terrasser.</p>
+            <p class="stub">Historie kommer fra Nikolaj</p>
+          </div>
+        </div>
+        <div class="place">
+          <div class="photo-stub">⟨ Foto ⟩</div>
+          <div class="body">
+            <h3>Steni Vala, Alonissos</h3>
+            <p class="description">Fiskertaverna med dagens fangst, godt ly for nordvest, en af de bedste aftener i ugen.</p>
+            <p class="stub">Historie kommer fra Nikolaj</p>
+          </div>
+        </div>
+        <div class="place">
+          <div class="photo-stub">⟨ Foto ⟩</div>
+          <div class="body">
+            <h3>Kyra Panagia</h3>
+            <p class="description">Inde i marineparken. Anker alene, klosterruin på højen, sæler hvis I er heldige.</p>
+            <p class="stub">Historie kommer fra Nikolaj</p>
+          </div>
+        </div>
+        <div class="place">
+          <div class="photo-stub">⟨ Foto ⟩</div>
+          <div class="body">
+            <h3>Trikeri, Pelion-halvøen</h3>
+            <p class="description">Gammel fiskerlandsby. Naturlig første nat på vej ud fra Volos.</p>
+            <p class="stub">Historie kommer fra Nikolaj</p>
+          </div>
+        </div>
+        <div class="place">
+          <div class="photo-stub">⟨ Foto ⟩</div>
+          <div class="body">
+            <h3>Damouchari, Pelion</h3>
+            <p class="description">Mamma Mia-bugten. Klart vand under stejle skrænter, lille havn på vej tilbage.</p>
+            <p class="stub">Historie kommer fra Nikolaj</p>
+          </div>
+        </div>
+        <div class="place">
+          <div class="photo-stub">⟨ Foto ⟩</div>
+          <div class="body">
+            <h3>Volos havnefront</h3>
+            <p class="description">Tsipouradiko ved solnedgang, en lokal specialitet. Anbefales før eller efter chartret.</p>
+            <p class="stub">Historie kommer fra Nikolaj</p>
           </div>
         </div>
       </div>
