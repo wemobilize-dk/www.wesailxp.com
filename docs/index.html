@@ -80,6 +80,13 @@
     .story p:first-of-type::first-letter { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 3.4rem; float: left; line-height: 0.9; padding: 8px 12px 0 0; color: var(--navy); }
     .pullquote { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.5rem; font-style: italic; color: var(--navy); border-left: 3px solid var(--sand); padding: 6px 0 6px 24px; margin: 30px 0; max-width: 60ch; }
 
+    /* origin photo strip — 1993 photos (Greece, Giles, father's friend) */
+    .origin-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 32px 0 12px; max-width: 64ch; }
+    @media (max-width: 600px) { .origin-strip { grid-template-columns: 1fr; } }
+    .origin-strip figure { margin: 0; }
+    .origin-strip img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: var(--rule); }
+    .origin-strip figcaption { font-style: italic; color: var(--muted); font-size: 0.82rem; margin-top: 8px; line-height: 1.45; }
+
     .offers { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
     @media (max-width: 720px) { .offers { grid-template-columns: 1fr; } }
     .card { background: white; border: 1px solid var(--rule); padding: 32px 28px; }
@@ -157,7 +164,22 @@
   <section class="story">
     <div class="container">
       <h2>Sådan er det her anderledes.</h2>
-      <p>Første gang jeg sejlede i Grækenland var jeg fjorten og havde lige lært nok engelsk i skolen til at få en ven på en strand på Peloponnes. Han sejlede. Jeg sejlede. Vi skrev breve til hinanden i årevis bagefter. Jeg blev ved med at komme tilbage til Grækenland — først med venner, så med min egen familie, på chartrede både fra Kroatien, Danmark, Caribien, og altid, til sidst, Grækenland. Stederne jeg vendte tilbage til var de stille. Bugterne uden flåderne.</p>
+      <p>Min far rejste i Grækenland som ung i 1960'erne og fik venner der som blev livslange. Det er grunden til at vi som familie blev ved med at komme tilbage — vi havde altid nogen at besøge. I 1993 var jeg med på en af de ture: vi besøgte min fars gamle ven i Peloponnes, og jeg sejlede med min franske ven Giles på hans båd i græske farvande. Det er der det starter, for mig.</p>
+      <div class="origin-strip">
+        <figure>
+          <img src="public/pics/origin/1993-fars-ven.jpg" alt="Familien besøger min fars gamle græske ven i Peloponnes, sommer 1993" loading="lazy">
+          <figcaption>Hos min fars gamle ven, Peloponnes, sommer 1993.</figcaption>
+        </figure>
+        <figure>
+          <img src="public/pics/origin/1993-giles-baad.jpg" alt="Giles, min franske ven, og hans båd — første gang jeg sejlede i græske farvande" loading="lazy">
+          <figcaption>Giles og hans båd — første gang jeg sejlede i græske farvande.</figcaption>
+        </figure>
+        <figure>
+          <img src="public/pics/origin/1993-paa-baaden.jpg" alt="Mig om bord, 1993" loading="lazy">
+          <figcaption>Mig om bord, et sted derude, juli 1993.</figcaption>
+        </figure>
+      </div>
+      <p>Jeg blev ved med at komme tilbage til Grækenland — først med venner, så med min egen familie, på chartrede både fra Kroatien, Danmark, Caribien, og altid, til sidst, Grækenland. Stederne jeg vendte tilbage til var de stille. Bugterne uden flåderne.</p>
       <p><em>Xanemo</em> er en 1995 Beneteau Oceanis 440, Jubilee edition — en <strong>ejerversion</strong>, ét rat i stedet for de to du ser på de nye charterbåde. Jeg købte hende, restaurerede hende i 2023, satte nye Quantum-sejl på, bovpropel, solceller og vindgenerator, og lagde hende i Volos. Hun er ikke ny. Hun har et teakdæk fra sidste år og 30 år af nogen-der-har-elsket-hende. Hun er en af de hurtigere både i området — det betyder god sejlads de dage der er vind, og gode ankerpladser de dage der ikke er.</p>
       <p>Jeg deler hende med folk jeg kender og folk de kender. Bookinger kommer direkte: Odyssey Sailing i Volos klarer papirarbejdet og kaptajnerne; jeg klarer samtalerne. Gæster der booker direkte betaler 20% under listeprisen som standard, mere ved last-minute. Kaptajnerne er græske skippere jeg sejler med selv — Nasos, for eksempel, der også passer båden om vinteren.</p>
       <div class="pullquote">Hvis det tætteste du har hørt på det jeg beskriver er FTLF's gastebørs, bare uden kravet om at være i kulturen i forvejen — så ja, det er sådan her.</div>

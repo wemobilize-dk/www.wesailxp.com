@@ -78,6 +78,13 @@
     .story p:first-of-type::first-letter { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 3.4rem; float: left; line-height: 0.9; padding: 8px 12px 0 0; color: var(--navy); }
     .pullquote { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.5rem; font-style: italic; color: var(--navy); border-left: 3px solid var(--sand); padding: 6px 0 6px 24px; margin: 30px 0; max-width: 60ch; }
 
+    /* origin photo strip — 1993 photos */
+    .origin-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 32px 0 12px; max-width: 64ch; }
+    @media (max-width: 600px) { .origin-strip { grid-template-columns: 1fr; } }
+    .origin-strip figure { margin: 0; }
+    .origin-strip img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: var(--rule); }
+    .origin-strip figcaption { font-style: italic; color: var(--muted); font-size: 0.82rem; margin-top: 8px; line-height: 1.45; }
+
     .offers { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
     @media (max-width: 720px) { .offers { grid-template-columns: 1fr; } }
     .card { background: white; border: 1px solid var(--rule); padding: 32px 28px; }
@@ -155,7 +162,22 @@
   <section class="story">
     <div class="container">
       <h2>How this is different.</h2>
-      <p>The first time I sailed in Greece I was fourteen and had just learned enough English to make a friend on a beach in the Peloponnese. He sailed. I sailed. We wrote letters to each other for years afterwards. I kept coming back to Greece — first with friends, then with my own family, on chartered boats out of Croatia, Denmark, the Caribbean, and always, eventually, Greece. The places I came back to were the quiet ones. The bays without the fleet.</p>
+      <p>My father travelled in Greece as a young man in the 1960s and made friends there. They stayed friends for life. That's why my family kept coming back — we always had someone to visit. In 1993 I was on one of those trips: we visited one of my father's old friends in the Peloponnese, and I sailed with my French friend Giles on his boat in Greek waters. That's where it starts, for me.</p>
+      <div class="origin-strip">
+        <figure>
+          <img src="../public/pics/origin/1993-fars-ven.jpg" alt="My family visiting my father's old Greek friend in the Peloponnese, summer 1993" loading="lazy">
+          <figcaption>With my father's old friend, Peloponnese, summer 1993.</figcaption>
+        </figure>
+        <figure>
+          <img src="../public/pics/origin/1993-giles-baad.jpg" alt="Giles, my French friend, and his boat — first time I sailed in Greek waters" loading="lazy">
+          <figcaption>Giles and his boat — the first time I sailed in Greek waters.</figcaption>
+        </figure>
+        <figure>
+          <img src="../public/pics/origin/1993-paa-baaden.jpg" alt="Me onboard, 1993" loading="lazy">
+          <figcaption>Me onboard, somewhere out there, July 1993.</figcaption>
+        </figure>
+      </div>
+      <p>I kept coming back to Greece — first with friends, then with my own family, on chartered boats out of Croatia, Denmark, the Caribbean, and always, eventually, Greece. The places I came back to were the quiet ones. The bays without the fleet.</p>
       <p><em>Xanemo</em> is a 1995 Beneteau Oceanis 440, Jubilee edition — an <strong>owner's version</strong>, one wheel rather than the two you see on the modern charter boats. I bought her, refit her in 2023, fitted new Quantum sails, a bow thruster, solar and a wind generator, and put her in Volos. She is not new. She has a teak cockpit laid last year and 30 years of someone-having-loved-her. She is one of the faster boats in the area — which means good sailing on the days there's wind, and good anchorages on the days there isn't.</p>
       <p>I share her with people I know, and people they know. Bookings come direct: Odyssey Sailing in Volos handles the paperwork and the captains; I handle the conversations. Direct-booked guests pay 20% under the published rate as standard, deeper for last-minute. The captains are Greek skippers I sail with myself — Nasos, for one, who also keeps the boat through the winter.</p>
       <div class="pullquote">If the closest thing you've heard to this is FTLF's gastebørs, but without the requirement to already be in the subculture — yes, this is that.</div>
