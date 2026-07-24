@@ -126,6 +126,12 @@
     .testimonial .name { font-weight: 500; color: var(--navy); font-size: 0.96rem; }
     .testimonial .role { color: var(--muted); font-size: 0.85rem; }
     .testimonial .placeholder-tag { position: absolute; top: 12px; right: 14px; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sand); font-weight: 600; }
+    .testimonial--feature { max-width: 760px; }
+    .testimonial-gallery { margin: 34px 0 0; }
+    .tg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .tg-grid img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; background: var(--rule); }
+    @media (max-width: 720px) { .tg-grid { grid-template-columns: 1fr 1fr; } }
+    .testimonial-gallery figcaption { font-style: italic; color: var(--muted); font-size: 0.82rem; margin-top: 12px; text-align: center; }
 
     .contact { text-align: center; padding: 100px 0 110px; }
     .contact h2 { margin-bottom: 12px; }
@@ -323,31 +329,27 @@
   <section class="testimonials">
     <div class="container">
       <h2>What guests say.</h2>
-      <p style="margin-bottom: 36px;">Two new testimonials in production. Below: placeholder content showing the form. Real quotes from confirmed guests will replace these before launch — older reviews from prior charters meanwhile on <a href="https://odysseysailing.gr/charter/oceanis-440-volos/#reviews" target="_blank" rel="noopener">the Odyssey listing</a>.</p>
-      <div class="grid">
-        <div class="testimonial">
-          <span class="placeholder-tag">Placeholder</span>
-          <p class="quote">We spent the week between Skopelos and the marine park. Nasos knew exactly which bays were quiet on a Wednesday and which had the better taverna. The kids learned to handle the tender. We barely went into a marina — that was the point.</p>
-          <div class="meta">
-            <div class="avatar"></div>
-            <div>
-              <div class="name">⟨ Guest name ⟩</div>
-              <div class="role">Skippered week, July 2024 — family of five</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial">
-          <span class="placeholder-tag">Placeholder</span>
-          <p class="quote">Xanemo points well to weather for her age, and the new genoa makes a difference. Two weeks out of Volos with full Sporades range — the quietest weather window we've had in years. Nikolaj's handover was real: keys, briefing, and out of the way.</p>
-          <div class="meta">
-            <div class="avatar"></div>
-            <div>
-              <div class="name">⟨ Guest name ⟩</div>
-              <div class="role">Bareboat fortnight, May 2024 — four crew</div>
-            </div>
+      <div class="testimonial testimonial--feature">
+        <p class="quote">We had a fantastic week aboard Xanemo with a captain, and it turned into a holiday that went well beyond what we'd expected. There were four of us — the two of us, our daughter and our son-in-law — with plenty of room, and honestly a couple more could easily have come along. Instead of the usual package holiday we sailed from island to island, slept aboard, and saw some of the loveliest bays and coastline we've come across — the clear water, the small harbours, the quiet anchorages you'd never find on your own. Money-wise it came out about the same as an ordinary charter holiday, a little less even; the difference was simply that every day we woke to a new view and something new to do. Our captain was a big part of it — professional, calm, easy company — and he knew the area inside out, taking us to places we'd never have found ourselves. If you're after a holiday with freedom, a bit of adventure, and real time close to nature, we warmly recommend a week on Xanemo. We'll be doing it again.</p>
+        <div class="meta">
+          <div>
+            <div class="name">Gert &amp; Lotte</div>
+            <div class="role">Skippered week, June 2026 — family of four</div>
           </div>
         </div>
       </div>
+      <figure class="testimonial-gallery">
+        <div class="tg-grid">
+          <img src="../public/pics/testimonials/gl-anchor.webp" alt="Xanemo at anchor in a quiet Sporades cove" loading="lazy">
+          <img src="../public/pics/testimonials/gl-bow.webp" alt="Two of the family sitting on Xanemo's bow in harbour at dusk" loading="lazy">
+          <img src="../public/pics/testimonials/gl-catch.webp" alt="Cleaning the day's catch on the quay at sunset" loading="lazy">
+          <img src="../public/pics/testimonials/gl-quay.webp" alt="Xanemo moored stern-to at a rock quay in the evening light" loading="lazy">
+          <img src="../public/pics/testimonials/gl-cove.webp" alt="Clear water against a pine-covered Sporades shoreline" loading="lazy">
+          <img src="../public/pics/testimonials/gl-evening.webp" alt="A floodlit hilltop chapel above a taverna square in the evening" loading="lazy">
+        </div>
+        <figcaption>From Gert &amp; Lotte's week aboard, June 2026.</figcaption>
+      </figure>
+      <p style="margin-top: 28px;">More reviews from earlier charters on <a href="https://odysseysailing.gr/charter/oceanis-440-volos/#reviews" target="_blank" rel="noopener">the Odyssey Sailing listing</a>.</p>
     </div>
   </section>
 

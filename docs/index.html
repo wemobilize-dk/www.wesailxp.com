@@ -128,6 +128,12 @@
     .testimonial .name { font-weight: 500; color: var(--navy); font-size: 0.96rem; }
     .testimonial .role { color: var(--muted); font-size: 0.85rem; }
     .testimonial .placeholder-tag { position: absolute; top: 12px; right: 14px; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sand); font-weight: 600; }
+    .testimonial--feature { max-width: 760px; }
+    .testimonial-gallery { margin: 34px 0 0; }
+    .tg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .tg-grid img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; background: var(--rule); }
+    @media (max-width: 720px) { .tg-grid { grid-template-columns: 1fr 1fr; } }
+    .testimonial-gallery figcaption { font-style: italic; color: var(--muted); font-size: 0.82rem; margin-top: 12px; text-align: center; }
 
     .contact { text-align: center; padding: 100px 0 110px; }
     .contact h2 { margin-bottom: 12px; }
@@ -325,31 +331,27 @@
   <section class="testimonials">
     <div class="container">
       <h2>Hvad gæster siger.</h2>
-      <p style="margin-bottom: 36px;">To nye anbefalinger er på vej. Herunder: eksempel-indhold der viser formen. Rigtige citater fra bekræftede gæster erstatter disse før lancering — ældre anmeldelser fra tidligere chartere findes imens på <a href="https://odysseysailing.gr/charter/oceanis-440-volos/#reviews" target="_blank" rel="noopener">Odyssey-annoncen</a>.</p>
-      <div class="grid">
-        <div class="testimonial">
-          <span class="placeholder-tag">Eksempel</span>
-          <p class="quote">Vi tilbragte ugen mellem Skopelos og marineparken. Nasos vidste præcis hvilke bugter der var stille på en onsdag og hvilke der havde den bedste taverna. Børnene lærte at håndtere joller. Vi gik næsten ikke ind i nogen marina — det var hele pointen.</p>
-          <div class="meta">
-            <div class="avatar"></div>
-            <div>
-              <div class="name">⟨ Gæstens navn ⟩</div>
-              <div class="role">Skipperet uge, juli 2024 — familie på fem</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial">
-          <span class="placeholder-tag">Eksempel</span>
-          <p class="quote">Xanemo peger godt op i vinden i forhold til alderen, og den nye genua gør forskel. To uger ud af Volos med fuld Sporader-rækkevidde — det stilleste vejrvindue vi har haft i årevis. Nikolajs overdragelse var ægte: nøgler, briefing, og så ude af vejen.</p>
-          <div class="meta">
-            <div class="avatar"></div>
-            <div>
-              <div class="name">⟨ Gæstens navn ⟩</div>
-              <div class="role">Bareboat 14 dage, maj 2024 — fire i besætningen</div>
-            </div>
+      <div class="testimonial testimonial--feature">
+        <p class="quote">Vi havde en fantastisk uge ombord på Xanemo med en lejet kaptajn, og det blev en ferieoplevelse, der langt oversteg vores forventninger. Vi var fire personer afsted: mor, far, datter og svigersøn. Båden havde god plads til os alle, og der kunne faktisk sagtens have været et par personer mere med uden problemer. I stedet for den klassiske charterferie valgte vi at sejle fra ø til ø, sove ombord og opleve nogle af de smukkeste bugter og landskaber, vi nogensinde har set. Det krystalklare vand, de små havne, de skjulte ankerpladser og de mange naturskønne omgivelser gjorde turen helt unik. Økonomisk lå ferien faktisk i samme prisniveau som, eller endda lidt under, hvad en traditionel charterferie ville have kostet. Forskellen var bare, at vi hver dag vågnede op til en ny udsigt og nye oplevelser. Vores kaptajn var en stor del af oplevelsen — professionel, rolig, hjælpsom og utrolig behagelig at være sammen med. Han kendte området indgående og sørgede for, at vi fik adgang til steder, som vi aldrig selv ville have fundet. Hvis man ønsker en ferie med frihed, eventyr, nærvær og naturoplevelser i særklasse, kan vi varmt anbefale en uge ombord på Xanemo. Det er en ferieform, vi uden tvivl vil vælge igen.</p>
+        <div class="meta">
+          <div>
+            <div class="name">Gert &amp; Lotte</div>
+            <div class="role">Kaptajnsuge, juni 2026 — familie på fire</div>
           </div>
         </div>
       </div>
+      <figure class="testimonial-gallery">
+        <div class="tg-grid">
+          <img src="public/pics/testimonials/gl-anchor.webp" alt="Xanemo for anker i en stille bugt i Sporaderne" loading="lazy">
+          <img src="public/pics/testimonials/gl-bow.webp" alt="To af familien sidder på Xanemos fordæk i havnen i skumringen" loading="lazy">
+          <img src="public/pics/testimonials/gl-catch.webp" alt="Dagens fangst gøres i stand på kajen ved solnedgang" loading="lazy">
+          <img src="public/pics/testimonials/gl-quay.webp" alt="Xanemo fortøjet agterfortøjet ved en klippekaj i aftenlyset" loading="lazy">
+          <img src="public/pics/testimonials/gl-cove.webp" alt="Klart vand mod en fyrbevokset kyst i Sporaderne" loading="lazy">
+          <img src="public/pics/testimonials/gl-evening.webp" alt="En oplyst kapel på en bakketop over en tavernaplads om aftenen" loading="lazy">
+        </div>
+        <figcaption>Fra Gert &amp; Lottes uge ombord, juni 2026.</figcaption>
+      </figure>
+      <p style="margin-top: 28px;">Flere anmeldelser fra tidligere chartere på <a href="https://odysseysailing.gr/charter/oceanis-440-volos/#reviews" target="_blank" rel="noopener">Odyssey Sailing-annoncen</a>.</p>
     </div>
   </section>
 
