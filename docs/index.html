@@ -158,6 +158,13 @@
     @media (max-width: 600px) { .carousel-btn { display: none; } .carousel-track figure { width: 88%; } .carousel.guests .carousel-track figure { width: 72%; } }
 
     footer { background: var(--navy); color: rgba(244,239,230,0.7); font-size: 0.85rem; padding: 36px 0 44px; line-height: 1.7; }
+    .mark-note { background: var(--linen); padding: 76px 0; border-top: 1px solid var(--rule); }
+    .mark-note-inner { display: flex; gap: 46px; align-items: flex-start; flex-wrap: wrap; }
+    .mark-note-logo { width: 120px; height: 120px; flex-shrink: 0; border-radius: 26px; }
+    .mark-note-text { flex: 1; min-width: 280px; }
+    .mark-note-text h2 { margin-bottom: 18px; }
+    .mark-note-text p { margin: 0 0 14px; max-width: 62ch; }
+    .mark-note-palette { color: var(--muted); }
     footer a { color: rgba(244,239,230,0.9); }
   </style>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -421,6 +428,19 @@
       <h2>Skriv direkte.</h2>
       <p>Jeg læser hver besked selv.</p>
       <a class="email" href="mailto:nikolaj@wesailxp.com">nikolaj@wesailxp.com</a>
+    </div>
+  </section>
+
+  <section class="mark-note">
+    <div class="container mark-note-inner">
+      <img class="mark-note-logo" src="/favicon.svg" alt="WeSails mærke: to sejl der krydser hinanden, med et π i krydset og tre bølger nedenunder" width="120" height="120">
+      <div class="mark-note-text">
+        <h2>Mærket</h2>
+        <p>To sejl krydser hinanden — Xanemos storsejl og genua. De tegner X'et i hendes navn: <em>Xanemo</em> bærer <em>ánemos</em>, det græske ord for vind.</p>
+        <p>I krydset står et lille π. Læst sammen bliver de XP — <em>experience</em>. Det er derfra <em>wesailxp</em> kommer: ikke en flåde, én båd, sejlet for oplevelsens skyld.</p>
+        <p>Under sejlene løber tre bølger, én for hvert bogstav i <span lang="grc">ἀεί</span>. <em>Aeí</em> er det gamle græske ord for <em>altid</em> — ældre end Det Nye Testamente, og det står der stadig. Bølgerne staver det ikke; de holder bare på det sådan som havet gør.</p>
+        <p class="mark-note-palette">Mørkeblå for det dybe vand hun ligger for anker i. Hørhvid for sejlene. Sand for teaken under fødderne.</p>
+      </div>
     </div>
   </section>
 

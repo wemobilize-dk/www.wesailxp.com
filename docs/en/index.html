@@ -156,6 +156,13 @@
     @media (max-width: 600px) { .carousel-btn { display: none; } .carousel-track figure { width: 88%; } .carousel.guests .carousel-track figure { width: 72%; } }
 
     footer { background: var(--navy); color: rgba(244,239,230,0.7); font-size: 0.85rem; padding: 36px 0 44px; line-height: 1.7; }
+    .mark-note { background: var(--linen); padding: 76px 0; border-top: 1px solid var(--rule); }
+    .mark-note-inner { display: flex; gap: 46px; align-items: flex-start; flex-wrap: wrap; }
+    .mark-note-logo { width: 120px; height: 120px; flex-shrink: 0; border-radius: 26px; }
+    .mark-note-text { flex: 1; min-width: 280px; }
+    .mark-note-text h2 { margin-bottom: 18px; }
+    .mark-note-text p { margin: 0 0 14px; max-width: 62ch; }
+    .mark-note-palette { color: var(--muted); }
     footer a { color: rgba(244,239,230,0.9); }
   </style>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -419,6 +426,19 @@
       <h2>Write directly.</h2>
       <p>I read every message myself.</p>
       <a class="email" href="mailto:nikolaj@wesailxp.com">nikolaj@wesailxp.com</a>
+    </div>
+  </section>
+
+  <section class="mark-note">
+    <div class="container mark-note-inner">
+      <img class="mark-note-logo" src="/favicon.svg" alt="The WeSail mark: two sails crossing each other, with a π at the crossing and three waves beneath" width="120" height="120">
+      <div class="mark-note-text">
+        <h2>The mark</h2>
+        <p>Two sails crossing — Xanemo&#39;s main and her genoa. They draw the X of her name: <em>Xanemo</em> carries <em>ánemos</em>, the Greek word for wind.</p>
+        <p>In the crossing sits a small π. Read together they make XP — experience. That is where <em>wesailxp</em> comes from: not a fleet, one boat, sailed for the experience of it.</p>
+        <p>Under the sails run three waves, one for each letter of <span lang="grc">ἀεί</span>. <em>Aeí</em> is the old Greek word for <em>always</em> — older than the New Testament, and still there in it. The waves don&#39;t spell it out; they just keep it, the way the sea does.</p>
+        <p class="mark-note-palette">Navy for the deep water she anchors in. Linen for the sails. Sand for the teak underfoot.</p>
+      </div>
     </div>
   </section>
 
