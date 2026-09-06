@@ -34,7 +34,8 @@ a { color: var(--navy); }
 
 /* nav */
 .main-nav { background: var(--navy); padding: 14px 28px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; font-size: 0.92rem; }
-.main-nav .brand { font-family: 'Cormorant Garamond', serif; color: white; font-size: 1.25rem; text-decoration: none; font-weight: 500; }
+.main-nav .brand { font-family: 'Cormorant Garamond', serif; color: white; font-size: 1.25rem; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 10px; }
+    .main-nav .brand .brand-logo { display: block; width: 30px; height: 30px; }
 .main-nav .links { display: flex; gap: 22px; flex: 1; flex-wrap: wrap; }
 .main-nav .links a { color: rgba(255,255,255,0.82); text-decoration: none; }
 .main-nav .links a:hover, .main-nav .links a.active { color: var(--sand); }
@@ -90,10 +91,13 @@ table.kv td:first-child { color: var(--navy); font-weight: 500; min-width: 180px
 footer { background: var(--navy); color: rgba(244,239,230,0.7); font-size: 0.85rem; padding: 36px 0 44px; line-height: 1.7; }
 footer a { color: rgba(244,239,230,0.9); }
 </style>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
   <nav class="main-nav" aria-label="Hovedmenu">
-    <a class="brand" href="/">WeSail</a>
+    <a class="brand" href="/"><img class="brand-logo" src="/favicon.svg" alt="" width="30" height="30">WeSail</a>
     <div class="links">
         <a href="/">Forside</a>
         <a href="/sailing-with-captain.html" class="active">Sejl med kaptajn</a>
